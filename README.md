@@ -17,13 +17,19 @@
 ## ビルド方法
 
 ### MOD をビルド
-> ./gradlew build
+```
+./gradlew build
+```
 
 ### 開発用クライアントを起動
-> ./gradlew runClient
+```
+./gradlew runClient
+```
 
 ### 開発用サーバーを起動
-> ./gradlew runServer
+```
+./gradlew runServer
+```
 
 ## Node.js ブリッジのセットアップ
 
