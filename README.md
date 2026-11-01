@@ -2,53 +2,51 @@ English | [日本語](README_ja.md)
 
 ![CHP](https://github.com/uma-channel/CommandHelperPlus/blob/main/logos/chp_logo.png)
 
-### Command Helper Plus は、Minecraft のコマンド作業を快適にします。
-### 痒い所に手が届く、必須級の便利 MOD です。
+### Command Helper Plus makes working with Minecraft commands easier and more comfortable.
+### It's a must-have utility mod that takes care of all the small quality-of-life details.
 
-# バージョン対応状況
-✅: 実装済み｜📝: 実装予定
-| ローダー | バージョン | 実装状況 |
+# Supported Versions
+✅: Implemented | 📝: Planned
+| Loader | Version | Status |
 |---|---|---|
 | Fabric | 1.20.4 | 📝 |
 | Fabric | 1.21.10 | ✅ |
 | Fabric | 1.21.11 | 📝 |
 | Fabric | 26.3 | 📝 |
 
-# 概要
+# Overview
 
-**[公式サイト](https://chp.clpc.club)をご確認ください。**
+Please check the **[Official Website](https://chp.clpc.club)** for details.
 
-# 前提条件
+# Prerequisites
 
 - **Minecraft**: Java Edition
-- **Modローダー**: Fabric
-- **前提Mod**: [Fabric API](https://modrinth.com/mod/fabric-api/versions?c=release)
-- **推奨Mod**: [ModMenu](https://modrinth.com/mod/modmenu/versions?c=release&l=fabric)
+- **Mod Loader**: Fabric
+- **Required Mod**: [Fabric API](https://modrinth.com/mod/fabric-api/versions?c=release)
+- **Recommended Mod**: [ModMenu](https://modrinth.com/mod/modmenu/versions?c=release&l=fabric)
 
-# ビルド方法
+# Building
 
-### MOD をビルド
-```
-./gradlew build
+### Build the MOD
 ```
 
-### 開発用クライアントを起動
 ```
-./gradlew runClient
-```
-
-### 開発用サーバーを起動
-```
-./gradlew runServer
+### Launch Development Client
 ```
 
-# Node.js ブリッジのセットアップ
+```
+### Launch Development Server
+```
+
+```
+
+# Node.js Bridge Setup
 
 ```bash
 cd node-bridge
 npm install
 ```
 
-# ライセンス
+# LICENSE
 
-詳細は [LICENSE](LICENSE) を参照。
+See [LICENSE](LICENSE) for details.
