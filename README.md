@@ -28,6 +28,7 @@ English | [日本語](README_ja.md)
 - **Mod Loader**: Fabric
 - **Required Mod**: [Fabric API](https://modrinth.com/mod/fabric-api/versions?c=release)
 - **Recommended Mod**: [ModMenu](https://modrinth.com/mod/modmenu/versions?c=release&l=fabric)
+- **Environments**: Client-side only, server-side only, or both
 
 # Build
 
