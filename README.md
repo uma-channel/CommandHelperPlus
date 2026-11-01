@@ -1,7 +1,7 @@
 # [CHP] Command Helper Plus
 
-- Command Helper Plus は、Minecraft のコマンド作業を快適にします。
-- 痒い所に手が届く、必須級の便利 MOD です。
+> Command Helper Plus は、Minecraft のコマンド作業を快適にします。
+> 痒い所に手が届く、必須級の便利 MOD です。
 
 ## バージョン対応状況
 ✅: 実装済み｜📝: 実装予定
