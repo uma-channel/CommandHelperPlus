@@ -52,6 +52,10 @@ cd node-bridge
 npm install
 ```
 
-# ライセンス
+# Super Thanks
+[Copyright (c) 2019-2025 SPGoding and SpyglassMC contributors](https://spyglassmc.com)
 
-詳細は [LICENSE](LICENSE) を参照。
+# LICENSE
+
+© 2026 Command Helper Plus / UMA. All rights reserved.
+> See [LICENSE](https://github.com/uma-channel/CommandHelperPlus/blob/main/LICENSE) for more details.
