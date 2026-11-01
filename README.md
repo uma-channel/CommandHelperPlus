@@ -3,6 +3,8 @@
 ### Command Helper Plus は、Minecraft のコマンド作業を快適にします。
 ### 痒い所に手が届く、必須級の便利 MOD です。
 
+![CHP](https://github.com/uma-channel/CommandHelperPlus/blob/main/logos/chp_logo.png)
+
 ## バージョン対応状況
 ✅: 実装済み｜📝: 実装予定
 | ローダー | バージョン | 実装状況 |
