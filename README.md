@@ -29,15 +29,17 @@ Please check the **[Official Website](https://chp.clpc.club)** for details.
 
 ### Build the MOD
 ```
-
+./gradlew build
 ```
+
 ### Launch Development Client
 ```
-
+./gradlew runClient
 ```
+
 ### Launch Development Server
 ```
-
+./gradlew runServer
 ```
 
 # Node.js Bridge Setup
