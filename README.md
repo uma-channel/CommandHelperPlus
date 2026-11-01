@@ -28,7 +28,7 @@ Please check the **[Official Website](https://chp.clpc.club)** for details.
 - **Required Mod**: [Fabric API](https://modrinth.com/mod/fabric-api/versions?c=release)
 - **Recommended Mod**: [ModMenu](https://modrinth.com/mod/modmenu/versions?c=release&l=fabric)
 
-# Building
+# Build
 
 ### Build the MOD
 ```
