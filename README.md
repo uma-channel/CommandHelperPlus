@@ -5,6 +5,10 @@ English | [日本語](README_ja.md)
 ### Command Helper Plus makes Minecraft commands easier and more comfortable. 
 ### An essential mod that refines every single detail.
 
+# Overview
+
+Please check the **[Official Website](https://chp.clpc.club)** for all details.
+
 # Supported Versions
 ✅: Implemented | 📝: Planned
 | Loader | Version | Status |
@@ -16,10 +20,6 @@ English | [日本語](README_ja.md)
 
 - Can't find the version you're looking for?
 - If there is enough feedback on [Discord](https://dsc.gg/chp), we might take action.
-
-# Overview
-
-Please check the **[Official Website](https://chp.clpc.club)** for details.
 
 # Prerequisites
 
