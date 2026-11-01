@@ -15,7 +15,7 @@ English | [日本語](README_ja.md)
 | Fabric | 26.3 | 📝 |
 
 - Can't find the version you're looking for?
-- If there is enough feedback on Discord, we might take action.
+- If there is enough feedback on [Discord](https://dsc.gg/chp), we might take action.
 
 # Overview
 
