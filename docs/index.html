@@ -298,7 +298,7 @@ const FJ=[
 {k:'ゲーム操作',t:'やり直しの手間を、ボタンひとつに。',d:'再参加、再起動、データパックの読み直しを速くします。',i:[
 ['再参加','ポーズ画面にボタンを追加。シングルは同じワールドへ、マルチは同じサーバーへ入り直します。Realms は対象外です。'],
 ['再起動','タイトル画面にボタンを追加。同じ起動構成でゲームを起動し直します。確認画面では、起動コマンドを初期状態で伏せます。'],
-['データパックを速く読み直す','/reload で、変更のあったファイルだけを処理します。ファンクション・レシピ・進捗に対応(シングルプレイ)。'],
+['データパックを速く読み直す','/reload の処理を最適化します。サーバーサイドに導入すればマルチプレイでも機能します。'],
 ['データパックフォルダを開く','ポーズ画面のボタンから、ワールドの datapacks フォルダを開きます(シングルプレイ)。'],
 ['設定ファイルを開く','設定画面から、設定ファイルと設定フォルダをすぐ開けます。'],
 ['実験的設定の確認を省く','ワールドを開く・作るときの、実験的な設定の確認を自動で飛ばします。既定はオフです。']]},
@@ -348,7 +348,7 @@ const FE=[
 {k:'Game controls',t:'Redo things with one button.',d:'Faster rejoining, restarting and data pack reloading.',i:[
 ['Rejoin','Adds a button to the pause screen. It re-enters the same world in singleplayer or the same server in multiplayer. Realms is not supported.'],
 ['Restart','Adds a button to the title screen that relaunches the game with the same launch setup. The confirmation screen hides the launch command at first.'],
-['Faster data pack reload','On /reload, only changed files are processed. Supports functions, recipes and advancements (singleplayer).'],
+['Faster data pack reload','Optimizes the /reload process. When installed on the server side, it also functions in multiplayer.'],
 ['Open the data pack folder','A pause screen button opens the datapacks folder of the world (singleplayer).'],
 ['Open the config file','Open the config file and the config folder right from the settings screen.'],
 ['Skip experimental prompts','Automatically skips the confirmation about experimental settings when opening or creating a world. Off by default.']]},
