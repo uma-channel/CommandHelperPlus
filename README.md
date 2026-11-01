@@ -5,7 +5,7 @@ English | [日本語](README_ja.md)
 ### Command Helper Plus は、Minecraft のコマンド作業を快適にします。
 ### 痒い所に手が届く、必須級の便利 MOD です。
 
-## バージョン対応状況
+# バージョン対応状況
 ✅: 実装済み｜📝: 実装予定
 | ローダー | バージョン | 実装状況 |
 |---|---|---|
@@ -14,16 +14,16 @@ English | [日本語](README_ja.md)
 | Fabric | 1.21.11 | 📝 |
 | Fabric | 26.3 | 📝 |
 
-## 前提条件
+# 前提条件
 
 - **Minecraft**: Java Edition
 - **Modローダー**: Fabric
 - **前提Mod**: [Fabric API](https://modrinth.com/mod/fabric-api/versions?c=release)
 - **推奨Mod**: [ModMenu](https://modrinth.com/mod/modmenu/versions?c=release&l=fabric)
 
-## ビルド方法
+# ビルド方法
 
-### MOD をビルド
+## MOD をビルド
 ```
 ./gradlew build
 ```
@@ -38,13 +38,13 @@ English | [日本語](README_ja.md)
 ./gradlew runServer
 ```
 
-## Node.js ブリッジのセットアップ
+# Node.js ブリッジのセットアップ
 
 ```bash
 cd node-bridge
 npm install
 ```
 
-## ライセンス
+# ライセンス
 
 詳細は [LICENSE](LICENSE) を参照。
