@@ -15,8 +15,8 @@
 
 - **Minecraft**: Java Edition
 - **Modローダー**: Fabric
-- **前提Mod**: Fabric API
-- **推奨Mod**: ModMenu
+- **前提Mod**: [Fabric API](https://modrinth.com/mod/fabric-api/versions?c=release)
+- **推奨Mod**: [ModMenu](https://modrinth.com/mod/modmenu/versions?c=release&l=fabric)
 
 ## ビルド方法
 
