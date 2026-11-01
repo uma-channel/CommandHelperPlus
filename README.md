@@ -13,8 +13,10 @@
 
 ## 前提条件
 
-- **Minecraft**: JE 1.21.10
+- **Minecraft**: Java Edition
 - **Modローダー**: Fabric
+- **前提Mod**: Fabric API
+- **推奨Mod**: ModMenu
 
 ## ビルド方法
 
