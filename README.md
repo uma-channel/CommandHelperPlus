@@ -14,6 +14,10 @@ English | [日本語](README_ja.md)
 | Fabric | 1.21.11 | 📝 |
 | Fabric | 26.3 | 📝 |
 
+# 概要
+
+**[公式サイト](https://chp.clpc.club)をご確認ください。**
+
 # 前提条件
 
 - **Minecraft**: Java Edition
