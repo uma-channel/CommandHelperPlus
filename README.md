@@ -1,3 +1,5 @@
+English | [日本語](README_ja.md)
+
 ![CHP](https://github.com/uma-channel/CommandHelperPlus/blob/main/logos/chp_logo.png)
 
 ### Command Helper Plus は、Minecraft のコマンド作業を快適にします。
