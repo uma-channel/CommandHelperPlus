@@ -117,7 +117,7 @@ footer{max-width:1180px;margin:120px auto 0;padding:34px 5vw 50px;border-top:1px
 .win{transform:perspective(1100px) rotateY(calc(var(--px)*7deg)) rotateX(calc(var(--py)*-5deg));transition:transform .5s ease-out}
 .mq:hover div{animation-play-state:paused}
 .stats{padding:50px 5vw 80px}
-.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .stat{position:relative;overflow:hidden;padding:30px 20px 26px;text-align:center;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.03)}
 .stat::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--ac),transparent);transform:scaleX(0);transition:transform 1.6s .4s cubic-bezier(.2,.8,.2,1)}
 .stat.in::after{transform:none}
@@ -150,7 +150,7 @@ footer{max-width:1180px;margin:120px auto 0;padding:34px 5vw 50px;border-top:1px
 #lb figcaption{margin-top:18px;text-align:center;color:var(--mut)}#lb figcaption b{display:block;color:#fff;font-family:Sora,"Noto Sans JP",sans-serif}
 .lbb{position:fixed;border:1px solid var(--line);background:rgba(255,255,255,.08);color:#fff;width:48px;height:48px;border-radius:50%;font-size:1.6rem;line-height:1;cursor:pointer;transition:.3s}
 .lbb:hover{background:var(--b);transform:scale(1.1)}.x{top:24px;right:24px}.pv{left:24px;top:50%}.nx{right:24px;top:50%}
-@media(max-width:860px){.sg{grid-template-columns:1fr 1fr}.gal{grid-template-columns:1fr 1fr}.gt:nth-child(n){grid-column:auto}.gt:nth-child(1){grid-column:span 2}}
+@media(max-width:860px){.sg{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:span 2}.gal{grid-template-columns:1fr 1fr}.gt:nth-child(n){grid-column:auto}.gt:nth-child(1){grid-column:span 2}}
 @media(max-width:560px){.gal{grid-template-columns:1fr}.gt:nth-child(n){grid-column:auto}}
 </style>
 </head>
@@ -184,9 +184,9 @@ footer{max-width:1180px;margin:120px auto 0;padding:34px 5vw 50px;border-top:1px
 </header>
 
 <section class="stats" id="stats"><div class="sg">
-  <div class="stat rv" data-k="D"><b>–</b><span data-i="st1">総ダウンロード数</span><i>Modrinth</i></div>
-  <div class="stat rv" data-k="S" style="--d:.2s"><b>–</b><span data-i="st2">GitHub スター</span><i>GitHub</i></div>
-  <div class="stat rv" data-k="V" style="--d:.3s"><b>–</b><span data-i="st3">最新バージョン</span><i>Modrinth</i></div>
+  <div class="stat rv" data-k="D"><b>–</b><span data-i="st1">ダウンロード数</span><i>Modrinth</i></div>
+  <div class="stat rv" data-k="S" style="--d:.1s"><b>–</b><span data-i="st3">GitHub スター</span><i>GitHub</i></div>
+  <div class="stat rv" data-k="V" style="--d:.2s"><b>–</b><span data-i="st4">最新バージョン</span><i>Modrinth</i></div>
 </div></section>
 
 <div class="mq" aria-hidden="true"><div id="mq"></div></div>
@@ -364,7 +364,7 @@ const FE=[
 const EN={t:'[CHP] Command Helper Plus | Minecraft MOD',md:'Command Helper Plus makes working with Minecraft commands easier and more comfortable.',
 n1:'Features',n2:'Get started',n3:'Download',n4:'Gallery',h1a:'Commands,',h1b:'made effortless.',
 lead:'Command Helper Plus makes working with Minecraft commands easier and more comfortable. It\'s a must-have utility mod that takes care of all the small quality-of-life details.',
-b1:'Download',b2:'See features',st1:'Downloads',st2:'GitHub stars',st3:'Latest version',
+b1:'Download',b2:'See features',st1:'Downloads',st3:'GitHub stars',st4:'Latest version',
 hf:'Working with commands, made comfortable through and through.',
 sf:'We take the hassle out of using commands, one piece at a time. Pick a topic to see its features.',
 hs:'Three steps to get started.',ss:'No special setup needed.',
@@ -384,7 +384,7 @@ const f=new Intl.NumberFormat(lang==='ja'?'ja-JP':'en-US'),t0=performance.now();
 (function tick(t){const p=Math.min((t-t0)/2000,1),e=p===1?1:1-Math.pow(2,-10*p);b.textContent=f.format(Math.round(v*e));if(p<1)requestAnimationFrame(tick)})(t0)}
 document.querySelectorAll('.stat').forEach(el=>new IntersectionObserver(([e],o)=>{if(e.isIntersecting){el.dataset.v=1;paintStat(el);o.disconnect()}},{threshold:.4}).observe(el));
 Promise.all([jf(MR),jf('https://api.github.com/repos/uma-channel/CommandHelperPlus'),jf(MR+'/version')]).then(([m,g,v])=>{
-st.D=m&&m.downloads;st.F=m&&m.followers;st.S=g&&g.stargazers_count;st.V=v&&v[0]&&v[0].version_number;st.done=1;
+st.D=m&&m.downloads;st.S=g&&g.stargazers_count;st.V=v&&v[0]&&v[0].version_number;st.done=1;
 document.querySelectorAll('.stat').forEach(paintStat)});
 /* ギャラリー: images/ にスクリーンショットを置くと表示されます */
 const G=[['01-completion','補完','Completion','打ちながら、候補がその場に出ます。','Suggestions appear as you type.'],
