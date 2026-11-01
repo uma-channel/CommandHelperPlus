@@ -2,8 +2,8 @@ English | [日本語](README_ja.md)
 
 ![CHP](https://github.com/uma-channel/CommandHelperPlus/blob/main/logos/chp_logo.png)
 
-### Command Helper Plus makes working with Minecraft commands easier and more comfortable.
-### It's a must-have utility mod that takes care of all the small quality-of-life details.
+### Command Helper Plus makes Minecraft commands easier and more comfortable. 
+### A essential mod for all the details.
 
 # Supported Versions
 ✅: Implemented | 📝: Planned
