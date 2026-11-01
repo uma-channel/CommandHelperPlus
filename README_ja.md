@@ -28,6 +28,7 @@
 - **Modローダー**: Fabric
 - **前提Mod**: [Fabric API](https://modrinth.com/mod/fabric-api/versions?c=release)
 - **推奨Mod**: [ModMenu](https://modrinth.com/mod/modmenu/versions?c=release&l=fabric)
+- **動作環境**: クライアントサイドのみ、サーバーサイドのみ、またはその両方 
 
 # ビルド方法
 
