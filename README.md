@@ -27,7 +27,7 @@ English | [日本語](README_ja.md)
 
 # ビルド方法
 
-## MOD をビルド
+### MOD をビルド
 ```
 ./gradlew build
 ```
