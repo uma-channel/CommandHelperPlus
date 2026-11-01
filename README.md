@@ -7,8 +7,8 @@ English | [日本語](README_ja.md)
 
 # Overview
 
-Please check the **[Official Website](https://chp.clpc.club)** for all details.
-You can download the mod from [Modrinth](https://modrinth.com/mod/cmd-helper-plus).
+- **Please check the **[Official Website](https://chp.clpc.club)** for all details.**
+- **You can download the mod from [Modrinth](https://modrinth.com/mod/cmd-helper-plus).**
 
 # Supported Versions
 ✅: Implemented | 📝: Planned
