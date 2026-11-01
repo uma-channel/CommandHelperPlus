@@ -58,5 +58,4 @@ npm install
 # LICENSE
 
 © 2026 Command Helper Plus / UMA. All rights reserved.
-> See [LICENSE](https://github.com/uma-channel/CommandHelperPlus/blob/main/LICENSE) for more details.
-> 
+> [LICENSE](https://github.com/uma-channel/CommandHelperPlus/blob/main/LICENSE)から詳しい内容を確認できます。
