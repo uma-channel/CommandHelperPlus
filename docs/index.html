@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Command Helper Plus | Minecraft MOD 公式サイト</title>
-<meta name="description" content="Command Helper Plus は、Minecraft のコマンド入力をやさしく、速くする MOD です。">
+<title>[CHP] Command Helper Plus | Minecraft MOD</title>
+<meta name="description" content="Command Helper Plus は、Minecraft のコマンド作業を快適にする MOD です。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='30' fill='%233D5AFE'/%3E%3Cpath d='M30 90L52 38' stroke='%23fff' stroke-width='10' stroke-linecap='round'/%3E%3Cpath d='M84 50V78M70 64H98' stroke='%23A5F0FF' stroke-width='10' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@ nav.s{padding:10px 5vw;background:rgba(7,11,31,.72);backdrop-filter:blur(14px);b
 .brand svg{width:34px;height:34px}
 nav ul{display:flex;gap:28px;list-style:none;font-size:.92rem;color:var(--mut)}
 nav ul a:hover{color:#fff}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:14px;font-weight:700;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:14px;font-weight:700;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s,translate .25s ease-out}
 .btn.p{background:linear-gradient(135deg,var(--bl),var(--b));box-shadow:0 10px 30px -8px rgba(61,90,254,.7)}
 .btn.p::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.4) 50%,transparent 70%);transform:translateX(-120%)}
 .btn.p:hover::after{transform:translateX(120%);transition:.9s}
@@ -111,11 +111,50 @@ footer{max-width:1180px;margin:120px auto 0;padding:34px 5vw 50px;border-top:1px
 .rv.in{opacity:1;transform:none}
 @media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:130px}.stage{margin-top:70px}nav ul{display:none}.steps{grid-template-columns:1fr}.steps::before,.steps::after{display:none}}
 @media(prefers-reduced-motion:reduce){*,::before,::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+#orb{position:fixed;left:0;top:0;width:560px;height:560px;margin:-280px 0 0 -280px;border-radius:50%;background:radial-gradient(circle,rgba(107,139,255,.17),transparent 65%);pointer-events:none;z-index:-1;will-change:transform}
+.stage{translate:0 calc(var(--sy,0)*-.05px)}
+.win{transform:perspective(1100px) rotateY(calc(var(--px)*7deg)) rotateX(calc(var(--py)*-5deg));transition:transform .5s ease-out}
+.mq:hover div{animation-play-state:paused}
+.stats{padding-top:50px}
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat{position:relative;overflow:hidden;padding:30px 20px 26px;text-align:center;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.03)}
+.stat::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--ac),transparent);transform:scaleX(0);transition:transform 1.6s .4s cubic-bezier(.2,.8,.2,1)}
+.stat.in::after{transform:none}
+.stat b{display:block;font:700 clamp(1.8rem,3.6vw,2.7rem)/1.25 Sora,sans-serif;font-variant-numeric:tabular-nums;background:linear-gradient(120deg,#fff,var(--ac));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{display:block;color:var(--mut);font-size:.9rem}
+.stat i{display:block;margin-top:2px;font-style:normal;font-size:.72rem;color:var(--bl)}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:clamp(190px,23vw,310px);gap:18px;margin-top:56px}
+.gt{position:relative;margin:0;overflow:hidden;border:1px solid var(--line);border-radius:22px;cursor:zoom-in;background:#0a1030}
+.gt:nth-child(1),.gt:nth-child(4),.gt:nth-child(5){grid-column:span 2}
+.gt.rv,.gt.rv.in{opacity:1;clip-path:inset(100% 0 0 0 round 22px);transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:clip-path 1.2s cubic-bezier(.7,0,.2,1) var(--d,0s),transform .25s ease-out,border-color .4s}
+.gt.rv.in{clip-path:inset(0 round 22px)}
+.gt:hover{border-color:rgba(107,139,255,.6)}
+.gt .ph{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(circle at 25% 15%,rgba(107,139,255,.4),transparent 60%),linear-gradient(135deg,#17205a,#0a1030)}
+.gt .ph svg{width:26%;max-width:120px;opacity:.28;animation:float 6s ease-in-out infinite}
+.gt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.gt:hover img{transform:scale(1.07)}
+.gt::after{content:"";position:absolute;inset:0;background:radial-gradient(320px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.14),transparent 55%);opacity:0;transition:opacity .4s;pointer-events:none}
+.gt:hover::after{opacity:1}
+.gt figcaption{position:absolute;inset:auto 0 0 0;padding:60px 22px 20px;background:linear-gradient(transparent,rgba(5,8,22,.88));pointer-events:none}
+.gt b{display:block;font:700 1.05rem Sora,"Noto Sans JP",sans-serif}
+.gt span{display:block;color:var(--mut);font-size:.86rem;max-height:0;opacity:0;transform:translateY(8px);transition:.5s cubic-bezier(.2,.8,.2,1)}
+.gt:hover span{max-height:3em;opacity:1;transform:none}
+#lb{position:fixed;inset:0;z-index:80;display:grid;place-items:center;background:rgba(5,8,22,.84);backdrop-filter:blur(18px);opacity:0;visibility:hidden;transition:opacity .45s,visibility .45s}
+#lb.on{opacity:1;visibility:visible}
+#lb figure{margin:0;width:min(1100px,90vw);transform:scale(.9) translateY(24px);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+#lb.on figure{transform:none}
+#lb img{display:block;width:100%;max-height:72vh;object-fit:contain;border-radius:18px;background:#0d1442;box-shadow:0 40px 100px -20px #000}
+#lb figcaption{margin-top:18px;text-align:center;color:var(--mut)}#lb figcaption b{display:block;color:#fff;font-family:Sora,"Noto Sans JP",sans-serif}
+.lbb{position:fixed;border:1px solid var(--line);background:rgba(255,255,255,.08);color:#fff;width:48px;height:48px;border-radius:50%;font-size:1.6rem;line-height:1;cursor:pointer;transition:.3s}
+.lbb:hover{background:var(--b);transform:scale(1.1)}.x{top:24px;right:24px}.pv{left:24px;top:50%}.nx{right:24px;top:50%}
+@media(max-width:860px){.sg{grid-template-columns:1fr 1fr}.gal{grid-template-columns:1fr 1fr}.gt:nth-child(n){grid-column:auto}.gt:nth-child(1){grid-column:span 2}}
+@media(max-width:560px){.gal{grid-template-columns:1fr}.gt:nth-child(n){grid-column:auto}}
 </style>
 </head>
 <body>
 <div id="bar"></div>
-<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="grid"></div>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="grid"></div><div id="orb"></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6B8BFF"/><stop offset="1" stop-color="#2A3BCF"/></linearGradient>
 <linearGradient id="h" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
@@ -123,14 +162,14 @@ footer{max-width:1180px;margin:120px auto 0;padding:34px 5vw 50px;border-top:1px
 
 <nav id="nav">
   <a href="#top" class="brand"><svg><use href="#ic"/></svg>Command Helper Plus</a>
-  <ul><li><a href="#features" data-i="n1">特長</a></li><li><a href="#start" data-i="n2">使い方</a></li><li><a href="#download" data-i="n3">ダウンロード</a></li></ul>
-  <div class="lang"><button data-l="ja">日本語</button><button data-l="en">EN</button></div>
+  <ul><li><a href="#features" data-i="n1">特長</a></li><li><a href="#start" data-i="n2">使い方</a></li><li><a href="#gallery" data-i="n4">ギャラリー</a></li><li><a href="#download" data-i="n3">ダウンロード</a></li></ul>
+  <div class="lang"><button data-l="ja">日本語</button><button data-l="en">English</button></div>
 </nav>
 
 <header class="hero" id="top">
   <div>
     <h1><span class="ln"><span style="--d:.15s" data-i="h1a">コマンドを、</span></span><span class="ln"><span style="--d:.3s" data-i="h1b">もっと自由に。</span></span></h1>
-    <p class="lead" data-i="lead">Command Helper Plus は、Minecraft のコマンド作業を快適にする MOD です。痒い所に手が届く、必須級の便利な MOD です。</p>
+    <p class="lead" data-i="lead">Command Helper Plus は、Minecraft のコマンド作業を快適にします。痒い所に手が届く、必須級の便利 MOD です。</p>
     <div class="cta"><a class="btn p" href="#download" data-i="b1">ダウンロード</a><a class="btn g" href="#features" data-i="b2">特長を見る</a></div>
   </div>
   <div class="stage">
@@ -141,6 +180,13 @@ footer{max-width:1180px;margin:120px auto 0;padding:34px 5vw 50px;border-top:1px
     </div>
   </div>
 </header>
+
+<section class="stats" id="stats"><div class="sg">
+  <div class="stat rv" data-k="D"><b>–</b><span data-i="st1">ダウンロード数</span><i>Modrinth</i></div>
+  <div class="stat rv" data-k="F" style="--d:.1s"><b>–</b><span data-i="st2">フォロワー</span><i>Modrinth</i></div>
+  <div class="stat rv" data-k="S" style="--d:.2s"><b>–</b><span data-i="st3">GitHub スター</span><i>GitHub</i></div>
+  <div class="stat rv" data-k="V" style="--d:.3s"><b>–</b><span data-i="st4">最新バージョン</span><i>Modrinth</i></div>
+</div></section>
 
 <div class="mq" aria-hidden="true"><div id="mq"></div></div>
 
@@ -161,10 +207,16 @@ footer{max-width:1180px;margin:120px auto 0;padding:34px 5vw 50px;border-top:1px
   </div>
 </section>
 
+<section id="gallery">
+  <h2 class="rv" data-i="hg">ゲーム画面を、のぞいてみる。</h2>
+  <p class="sub rv" style="--d:.1s" data-i="sg">クリックで拡大します。</p>
+  <div class="gal" id="gal"></div>
+</section>
+
 <section id="download">
   <div class="dl rv"><div>
-    <h2 data-i="hd">さあ、コマンドをもっと楽に。</h2>
-    <p data-i="pd">Command Helper Plus を入れて、コマンド作業をもっと快適にしましょう。</p>
+    <h2 data-i="hd">さあ、コマンドをもっと快適に。</h2>
+    <p data-i="pd">Command Helper Plus で、コマンド作業をスピードアップ。</p>
     <div class="chips c"><span>Minecraft JE</span><span>Fabric</span><span>Fabric API</span><span data-i="c5">初回のみネット接続</span><span data-i="c6">Mod Menu(任意)</span></div>
     <div class="cta">
       <!-- TODO: Modrinth のプロジェクトURLに差し替えてください -->
@@ -172,20 +224,22 @@ footer{max-width:1180px;margin:120px auto 0;padding:34px 5vw 50px;border-top:1px
       <!-- TODO: GitHub のリポジトリURLに差し替えてください -->
       <a class="btn g" href="https://github.com/uma-channel/CommandHelperPlus" data-i="bg">GitHub でソースコードを見る</a>
     </div>
-    <p class="note" data-i="note">全バージョンへの対応は、計画中です。</p>
+    <p class="note" data-i="note">英語と日本語に対応。全バージョン対応は、計画中です。</p>
   </div></div>
   </section>
 
 <footer>
-  <span>© Command Helper Plus / UMA</span>
+  <span>© 2026 Command Helper Plus / UMA. All rights reserved.</span>
   <span data-i="f2">本 MOD は Minecraft の非公式 MOD であり、Mojang および Microsoft とは関係ありません。</span>
 </footer>
+
+<div id="lb" aria-hidden="true"><button class="lbb x" aria-label="Close">×</button><button class="lbb pv" aria-label="Prev">‹</button><button class="lbb nx" aria-label="Next">›</button><figure><img alt=""><figcaption><b></b><span></span></figcaption></figure></div>
 
 <script>
 const $=s=>document.querySelector(s),root=document.documentElement;
 /* スクロール演出 */
 const bar=$('#bar'),nav=$('#nav');
-const onScroll=()=>{const m=root.scrollHeight-innerHeight;bar.style.transform=`scaleX(${m>0?scrollY/m:0})`;nav.classList.toggle('s',scrollY>30)};
+const onScroll=()=>{const m=root.scrollHeight-innerHeight;bar.style.transform=`scaleX(${m>0?scrollY/m:0})`;nav.classList.toggle('s',scrollY>30);root.style.setProperty('--sy',scrollY)};
 addEventListener('scroll',onScroll,{passive:true});onScroll();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.2});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
@@ -193,7 +247,7 @@ document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 addEventListener('pointermove',e=>{root.style.setProperty('--px',(e.clientX/innerWidth-.5).toFixed(3));root.style.setProperty('--py',(e.clientY/innerHeight-.5).toFixed(3))},{passive:true});
 document.querySelectorAll('.card').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')}));
 /* 流れるコマンド */
-const ex=['give @p diamond 64','tp @s ~ ~10 ~','time set day','gamemode creative','effect give @s speed 60 2','weather clear','setblock ~ ~ ~ stone','summon minecraft:pig','fill ~ ~ ~ ~5 ~5 ~5 glass'];
+const ex=['reload','give @s apple[custom_model_data={strings:["abc"]}]','data modify entity @n[type=!player] Motion set value [0,1,0]','summon tnt ~ ~ ~ {Tags:["abc","tnt"]}','fill ~-1 ~- ~-1 ~1 ~ ~1 command_block{auto:true,Command:"execute summon tnt run setblock ~ ~ ~ air"}','item replace entity @s weapon.mainhand with diamond[enchantments={sharpness:5}]'];
 const row=ex.map(x=>`<span><b>/</b>${x}</span>`).join('');$('#mq').innerHTML=row+row;
 /* 入力デモ */
 const D=[['/give @s apple[custom_model_data={strings:',['/give @s apple[custom_model_data={strings:','/give @s apple[custom_model_data={floats:','/give @s apple[custom_model_data={flags:']],['/data modify entity @n[type=!player] Motion',['/data modify entity @n[type=!player] Motion','/data modify entity @n[type=!player] Moistness','/data modify entity @n[type=!player] MoreCarrotTicks']],['/summon tnt ~ ~ ~ {Tags:',['/summon tnt ~ ~ ~ {Tags:','/summon tnt ~ ~ ~ {Team:','/summon tnt ~ ~ ~ {TicksFrozen:']]];
@@ -214,13 +268,13 @@ const FJ=[
 ['候補の型を表示','候補の右側に [boolean] や [float] のように型を薄く表示します。'],
 ['{Command:"…"} の中','文字列の中身を1つのコマンドとして補完します。内側の自動閉じ・自動エスケープにも対応します。'],
 ['権限に応じた候補','コマンド名の位置では、自分の権限で使えるコマンドだけに絞ります。'],
-['バージョンに追従','遊んでいる Minecraft のバージョンに合わせた候補を出します。最新版や任意のバージョンも設定で指定できます。']]},
+['バージョンに追従','遊んでいる Minecraft のバージョンに合わせた候補を出します。任意のバージョンも設定で指定できます。']]},
 {k:'構文チェック',t:'実行する前に、間違いに気づく。',d:'入力中のコマンドの誤りを、リアルタイムで文字の下線として示します。',i:[
 ['下線で誤りを表示','入力が止まって少しすると、誤りの部分に下線を付けます。エラーは赤、警告は黄色です。'],
 ['理由をツールチップで','下線にマウスを重ねると、エラーの文言が出ます。横にスクロールしている長いコマンドでも使えます。'],
 ['コマンドブロックでも','チャット欄とコマンドブロックの編集画面の、どちらでも動きます。'],
 ['{Command:"…"} の内側も','入れ子の文字列の内側の誤りにも、下線が付きます。'],
-['存在しない ID の確認','データパックのファンクションなどの ID は、バニラの補完で存在を確認し、誤って警告にしません。存在しない ID は黄色になります。']]},
+['存在する ID の確認','データパックのファンクションなどの ID や、プラグイン/MOD等によるカスタムコマンドは警告がでません。存在しない ID は黄色になります。']]},
 {k:'履歴・お気に入り',t:'打ったコマンドを、探しやすく、使い回しやすく。',d:'チャット欄の「履歴」ボタンから、履歴とお気に入りの画面を開けます。',i:[
 ['履歴ボタン','チャット欄の入力欄の上に「履歴」ボタンを追加。履歴とお気に入りの2タブの画面が開きます。'],
 ['検索','語句で履歴とお気に入りを絞り込みます。空白区切りで AND、大文字小文字は区別しません。'],
@@ -228,14 +282,15 @@ const FJ=[
 ['保存件数の引き上げ','バニラは50件までですが、既定で1000件まで保存します。設定で50〜100000件に変えられます。'],
 ['重複の自動統合','同じコマンドは1件にまとめ、最後に使った順に並べます。↑↓の履歴にもすぐ反映されます。'],
 ['お気に入り','☆で登録・解除。通常履歴の上限や重複統合の対象外で、独立して保存されます。'],
-['ショートカットキー','お気に入りに、Ctrl・Alt・Super を含むキーを割り当てられます。押すと入力欄がそのコマンドに置き換わります(実行はしません)。Alt+キーでも余計な文字は入りません。'],
-['削除は必ず確認','削除の前に確認画面を挟みます。履歴の×だけは、設定で確認を省けます。']]},
+['ショートカットキー','お気に入りに、Ctrl・Alt・Super を含むキーを割り当てられます。押すと入力欄がそのコマンドに置き換わります(実行はしません)。'],
+['削除は必ず確認','削除の前に確認画面を挟みます。履歴の削除だけは、設定で確認を省けます。']]},
 {k:'コマンドブロック',t:'長いコマンドも、見渡せる。',d:'コマンドブロックの編集と確認を、少し楽にします。',i:[
-['横スクロールバー','コマンドが入力欄に収まらないとき、下にバーを表示。ドラッグ・クリック・マウスホイールで動かせます。カーソルは動きません。'],
+['横スクロール','コマンドが入力欄に収まらないとき、下にスクロールバーを表示。ドラッグ・クリック・マウスホイールで動かせます。カーソルは動きません。'],
 ['トロッコにも対応','コマンドブロックとトロッコ付きコマンドブロックの、両方の編集画面で使えます。'],
 ['照準で内容を表示','コマンドブロックに照準を合わせると、中身を右下に表示します。長いコマンドは8行で省略します。設定でオン・オフできます。',1]]},
 {k:'長いコマンド',t:'256文字の壁を、超える。',d:'複雑なアイテムコンポーネントや summon も、一度に入力できます。',i:[
 ['制限を引き上げ','「/」で始まるコマンドだけ、既定で32767文字まで入力・送信できます。設定で256〜32767文字に変えられます。'],
+['横スクロール','上下マウスホイールで左右に動かせます。カーソルは動きません。'],
 ['通常の発言はそのまま','「/」のない発言は、バニラどおり256文字です。'],
 ['署名付きコマンドの安全策','/say や /msg のように署名付きの引数を持つコマンドは、接続が切れないよう256文字に切り詰めて送ります。'],
 ['戻しても切れない','履歴画面から戻したときや、ウィンドウサイズを変えたときも、長い入力が切り詰められません。']]},
@@ -256,24 +311,20 @@ const FJ=[
 ['項目が多い','補完、自動閉じ、構文チェック、文字数制限、履歴の保存件数、HUD など、機能ごとに切り替えられます。'],
 ['再起動なしで反映','画面で変えた設定は、そのままゲームに反映されます。']]}];
 const FE=[
-{k:'Completion',t:'SpyglassMC completion, right inside the game.',d:'Get precise suggestions in the chat box and the command block editor.',i:[
+{k:'Completion',t:'Comfortable command input, thanks to completion.',d:'Typing gets easier. No more stopping because you are unsure of the syntax.',i:[
 ['SpyglassMC completion','Merges SpyglassMC suggestions into vanilla completion in the chat box and in the command block (block and minecart) editor.'],
 ['Structural symbols','Suggests [ { " ] } , = : and adds the separator after key suggestions.'],
 ['Auto-close','Closes brackets and quotes automatically. Typing a closing symbol overwrites it, Backspace removes the pair, and it also works after confirming with Tab or a click.'],
 ['Type labels','Shows the type as a dim label on the right of each suggestion, such as [boolean] or [float].'],
-['Suggestions mid-value','Suggestions appear even before a value is finished, as in {auto:tru|}.'],
-['Empty argument slots','Suggestions appear even where nothing is typed yet, such as after /data get entity @s.'],
 ['Inside {Command:"…"}','Completes the contents of the string as a single command, with auto-close and auto-escape for the inner layer.'],
 ['Permission-aware','At the command name position, narrows suggestions to the commands your permission level can use.'],
-['Follows your version','Suggests what fits the Minecraft version you are playing. You can also pin the latest or any specific version in the settings.'],
-['On and off','Spyglass completion and auto-close can be switched in the settings.']]},
+['Follows your version','Suggests what fits the Minecraft version you are playing. You can also choose any version in the settings.']]},
 {k:'Syntax check',t:'Spot mistakes before you run.',d:'Underlines errors in the command you are typing, in real time.',i:[
 ['Underlined errors','Shortly after you stop typing, the faulty part is underlined. Errors are red and warnings are yellow.'],
 ['Reasons as tooltips','Hover over an underline to read the message. It works even while a long command is scrolled sideways.'],
 ['In command blocks too','Works both in the chat box and in the command block editor.'],
 ['Inside {Command:"…"}','Mistakes inside the nested string are underlined as well.'],
-['Checking that IDs exist','IDs such as data pack functions are checked against vanilla completion, so they are not flagged by mistake. IDs that do not exist turn yellow.'],
-['On and off','Switch it with its own setting.']]},
+['Checking existing IDs','IDs such as data pack functions, and custom commands added by plugins or mods, raise no warnings. IDs that do not exist turn yellow.']]},
 {k:'History & favorites',t:'Find and reuse the commands you typed.',d:'Open the history and favorites screen from the History button in the chat box.',i:[
 ['History button','Adds a History button above the chat input. It opens a screen with two tabs: history and favorites.'],
 ['Search','Filter history and favorites by keywords. Words are separated by spaces and combined with AND, ignoring case.'],
@@ -281,14 +332,15 @@ const FE=[
 ['Larger history','Vanilla keeps 50 entries. This mod keeps 1000 by default, adjustable from 50 to 100000 in the settings.'],
 ['Automatic de-duplication','Identical commands are merged into one and ordered by last use. The Up and Down arrow history updates right away.'],
 ['Favorites','Star a command to save it, star again to remove it. Favorites are stored separately, outside the history limit and de-duplication.'],
-['Shortcut keys','Assign a key combination containing Ctrl, Alt or Super to a favorite. Pressing it replaces the input with that command without running it. Alt combos do not type stray characters.'],
-['Deletion needs confirmation','A confirmation screen appears before anything is deleted. Only the history delete button can skip it, through a setting.']]},
+['Shortcut keys','Assign a key combination containing Ctrl, Alt or Super to a favorite. Pressing it replaces the input with that command without running it.'],
+['Deletion needs confirmation','A confirmation screen appears before anything is deleted. Only deleting history can skip the confirmation, through a setting.']]},
 {k:'Command blocks',t:'See long commands at a glance.',d:'Makes editing and checking command blocks a little easier.',i:[
-['Horizontal scroll bar','When a command does not fit the input box, a bar appears below it. Drag it, click it or use the mouse wheel. The cursor does not move.'],
+['Horizontal scrolling','When a command does not fit the input box, a scroll bar appears below it. Drag it, click it or use the mouse wheel. The cursor does not move.'],
 ['Minecarts too','Works in the editor of both command blocks and command block minecarts.'],
 ['Aim to see contents','Aim at a command block to see its contents at the lower right. Long commands are cut off after 8 lines. You can switch it in the settings.',1]]},
 {k:'Long commands',t:'Go beyond 256 characters.',d:'Type complex item components or summon commands in one go.',i:[
 ['Raised limit','Only commands starting with / can be typed and sent up to 32767 characters by default. Adjustable from 256 to 32767.'],
+['Horizontal scrolling','Scroll sideways with the vertical mouse wheel. The cursor does not move.'],
 ['Normal chat unchanged','Messages without a leading / stay at the vanilla 256 characters.'],
 ['Safety for signed commands','Commands with signed arguments, such as /say and /msg, are trimmed to 256 characters when sent so the connection does not drop.'],
 ['Survives going back','Long input is not trimmed when you return from the history screen or resize the window.']]},
@@ -298,7 +350,7 @@ const FE=[
 ['Faster data pack reload','On /reload, only changed files are processed. Supports functions, recipes and advancements (singleplayer).'],
 ['Open the data pack folder','A pause screen button opens the datapacks folder of the world (singleplayer).'],
 ['Open the config file','Open the config file and the config folder right from the settings screen.'],
-['Skip experimental prompts','Automatically skips the experimental settings confirmation when opening or creating a world. Off by default.']]},
+['Skip experimental prompts','Automatically skips the confirmation about experimental settings when opening or creating a world. Off by default.']]},
 {k:'Display',t:'Make the unseen visible.',d:'Puts information from inside the world on your screen.',i:[
 ['Scoreboard HUD','Shows several scoreboards at once at the top left. Choose the target selector in the settings; fake players can be added too (up to 4).',1],
 ['Translucent invisible entities','Invisible entities look translucent. Works without spectator mode and needs no op.'],
@@ -308,18 +360,56 @@ const FE=[
 ['Settings screen','Open it from Mod Menu, or with the key assigned to Open Settings in the controls (O by default).'],
 ['Many options','Completion, auto-close, syntax check, length limit, history size, HUD and more can each be switched.'],
 ['No restart needed','Changes made on the screen apply to the game right away.']]}];
-const EN={t:'Command Helper Plus | Minecraft MOD Official Site',md:'Command Helper Plus is a client-side Minecraft mod that makes typing commands effortless.',
-n1:'Features',n2:'Get started',n3:'Download',h1a:'Commands,',h1b:'made effortless.',
-lead:'Command Helper Plus is a client-side Minecraft mod that makes typing commands effortless. Completion, syntax checking, history and more, with nothing to install on the server.',
-b1:'Download',b2:'See features',hf:'Everything around commands, made comfortable.',
-sf:'Typing, checking, redoing. We take the friction out of using commands, one piece at a time. Pick a topic to see its features.',
+const EN={t:'[CHP] Command Helper Plus | Minecraft MOD',md:'Command Helper Plus makes working with Minecraft commands easier and more comfortable.',
+n1:'Features',n2:'Get started',n3:'Download',n4:'Gallery',h1a:'Commands,',h1b:'made effortless.',
+lead:'Command Helper Plus makes Minecraft commands easier and more comfortable. A essential mod for all the details.',
+b1:'Download',b2:'See features',st1:'Downloads',st2:'Followers',st3:'GitHub stars',st4:'Latest version',
+hf:'Working with commands, made comfortable through and through.',
+sf:'We take the hassle out of using commands, one piece at a time. Pick a topic to see its features.',
 hs:'Three steps to get started.',ss:'No special setup needed.',
-s1h:'Download',s1p:'Get the mod file from Modrinth.',s2h:'Install',s2p:'Put it in the <code>mods</code> folder of a Fabric install with Fabric API. Install Node.js 18 or later as well.',
-s3h:'Play',s3p:'Launch the game and press <code>/</code>. On first launch the completion engine is still getting ready, so vanilla completion works meanwhile.',
-hd:'Make commands easier.',pd:'Add Command Helper Plus and make everyday play a little more comfortable.',
-c4:'Node.js 18+ (with npm)',c5:'Internet connection on first launch',c6:'Mod Menu (optional)',
-bm:'Download on Modrinth',bg:'View source on GitHub',note:'Support for other Minecraft versions and an English UI is planned.',
+s1h:'Download',s1p:'Get the mod file from Modrinth.',s2h:'Install',s2p:'Put it in the <code>mods</code> folder of an install with Fabric and Fabric API.',s3h:'Play',s3p:'Launch the game.',
+hg:'A look inside the game.',sg:'Click to enlarge.',
+hd:'Make commands more comfortable.',pd:'Speed up your command work with Command Helper Plus.',
+c5:'Internet connection on first launch',c6:'Mod Menu (optional)',
+bm:'Download on Modrinth',bg:'View source on GitHub',note:'Available in English and Japanese. Support for all versions is planned.',
 f2:'This is an unofficial Minecraft mod and is not affiliated with Mojang or Microsoft.',op:'op required'};
+/* 統計(Modrinth / GitHub API) */
+const st={};
+const jf=async u=>{try{const r=await fetch(u);return r.ok?await r.json():null}catch(e){return null}};
+const MR='https://api.modrinth.com/v2/project/cmd-helper-plus';
+function paintStat(el){const b=el.querySelector('b'),v=st[el.dataset.k];if(!el.dataset.v||b.dataset.p)return;
+if(!st.done)return;if(v==null){b.textContent='—';return}b.dataset.p=1;if(typeof v==='string'){b.textContent=v;return}
+const f=new Intl.NumberFormat(lang==='ja'?'ja-JP':'en-US'),t0=performance.now();
+(function tick(t){const p=Math.min((t-t0)/2000,1),e=p===1?1:1-Math.pow(2,-10*p);b.textContent=f.format(Math.round(v*e));if(p<1)requestAnimationFrame(tick)})(t0)}
+document.querySelectorAll('.stat').forEach(el=>new IntersectionObserver(([e],o)=>{if(e.isIntersecting){el.dataset.v=1;paintStat(el);o.disconnect()}},{threshold:.4}).observe(el));
+Promise.all([jf(MR),jf('https://api.github.com/repos/uma-channel/CommandHelperPlus'),jf(MR+'/version')]).then(([m,g,v])=>{
+st.D=m&&m.downloads;st.F=m&&m.followers;st.S=g&&g.stargazers_count;st.V=v&&v[0]&&v[0].version_number;st.done=1;
+document.querySelectorAll('.stat').forEach(paintStat)});
+/* ギャラリー: images/ にスクリーンショットを置くと表示されます */
+const G=[['01-completion','補完','Completion','打ちながら、候補がその場に出ます。','Suggestions appear as you type.'],
+['02-syntax','構文チェック','Syntax check','誤りは下線で、その場でわかります。','Mistakes are underlined on the spot.'],
+['03-history','履歴・お気に入り','History & favorites','過去のコマンドを、検索して呼び出せます。','Search and recall past commands.'],
+['04-commandblock','コマンドブロック','Command blocks','長いコマンドも、横スクロールで見渡せます。','Scroll sideways through long commands.'],
+['05-hud','スコアボード HUD','Scoreboard HUD','複数のスコアボードを、同時に表示します。','Show several scoreboards at once.'],
+['06-settings','設定','Settings','必要な機能だけを、オンにできます。','Turn on only the features you need.']];
+const gal=$('#gal');
+gal.innerHTML=G.map((g,n)=>`<figure class="gt rv" data-n="${n}" style="--d:${n*.12}s"><div class="ph"><svg><use href="#ic"/></svg></div><img src="images/${g[0]}.png" alt="" loading="lazy" onerror="this.remove()"><figcaption><b></b><span></span></figcaption></figure>`).join('');
+const gl=()=>gal.querySelectorAll('.gt').forEach((el,n)=>{const j=lang==='ja';el.querySelector('b').textContent=G[n][j?1:2];el.querySelector('span').textContent=G[n][j?3:4];el.querySelector('img')&&(el.querySelector('img').alt=G[n][j?1:2])});
+document.querySelectorAll('.gt').forEach(el=>{io.observe(el);
+el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+el.style.setProperty('--ry',x*9+'deg');el.style.setProperty('--rx',-y*7+'deg');el.style.setProperty('--mx',e.clientX-r.left+'px');el.style.setProperty('--my',e.clientY-r.top+'px')});
+el.addEventListener('pointerleave',()=>{el.style.setProperty('--rx','0deg');el.style.setProperty('--ry','0deg')});
+el.addEventListener('click',()=>openLb(+el.dataset.n))});
+const lb=$('#lb'),lbi=$('#lb img');let li=0;
+function openLb(n){li=(n+G.length)%G.length;const j=lang==='ja';lbi.style.display='';lbi.onerror=()=>lbi.style.display='none';lbi.src=`images/${G[li][0]}.png`;
+$('#lb b').textContent=G[li][j?1:2];$('#lb figcaption span').textContent=G[li][j?3:4];lb.classList.add('on')}
+lb.addEventListener('click',e=>{if(e.target.closest('.x')||e.target===lb)lb.classList.remove('on');else if(e.target.closest('.pv'))openLb(li-1);else if(e.target.closest('.nx'))openLb(li+1)});
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')openLb(li-1);if(e.key==='ArrowRight')openLb(li+1)});
+/* カーソル追従の光・マグネットボタン */
+const orb=$('#orb');let ox=innerWidth/2,oy=innerHeight/3,tx=ox,ty=oy;
+addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY},{passive:true});
+(function loop(){ox+=(tx-ox)*.08;oy+=(ty-oy)*.08;orb.style.transform=`translate(${ox}px,${oy}px)`;requestAnimationFrame(loop)})();
+document.querySelectorAll('.btn').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.translate=`${(e.clientX-r.left-r.width/2)*.18}px ${(e.clientY-r.top-r.height/2)*.28}px`});b.addEventListener('pointerleave',()=>b.style.translate='')});
 const ja={};document.querySelectorAll('[data-i]').forEach(e=>ja[e.dataset.i]=e.innerHTML);
 ja.t=document.title;ja.md=$('meta[name=description]').content;ja.op='op 必要';
 const tabs=$('#tabs'),panel=$('#panel');let lang='ja',cur=0;
@@ -329,13 +419,14 @@ panel.innerHTML=`<h3>${f.t}</h3><p>${f.d}</p><ul class="fl">`+f.i.map((x,k)=>`<l
 function setLang(l){lang=l;const D=T();document.querySelectorAll('[data-i]').forEach(e=>e.innerHTML=D[e.dataset.i]);
 document.title=D.t;$('meta[name=description]').content=D.md;root.lang=l;
 document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
-tabs.innerHTML=FS().map((f,n)=>`<button class="tab" data-n="${n}">${f.k}</button>`).join('');show(cur);
+gl();document.querySelectorAll('.stat').forEach(el=>{const b=el.querySelector('b');if(b.dataset.p&&typeof st[el.dataset.k]==='number')b.textContent=new Intl.NumberFormat(lang==='ja'?'ja-JP':'en-US').format(st[el.dataset.k])});tabs.innerHTML=FS().map((f,n)=>`<button class="tab" data-n="${n}">${f.k}</button>`).join('');show(cur);
 try{localStorage.setItem('chp-lang',l)}catch(e){}}
 tabs.addEventListener('click',e=>{const b=e.target.closest('.tab');if(b)show(+b.dataset.n)});
 document.querySelector('.lang').addEventListener('click',e=>{const b=e.target.closest('button');if(b)setLang(b.dataset.l)});
 let saved=null;try{saved=localStorage.getItem('chp-lang')}catch(e){}
 const q=new URLSearchParams(location.search).get('lang');
-setLang(['ja','en'].includes(q)?q:['ja','en'].includes(saved)?saved:(navigator.language||'ja').toLowerCase().startsWith('ja')?'ja':'en');
+const nl=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase();
+setLang(['ja','en'].includes(q)?q:['ja','en'].includes(saved)?saved:nl.startsWith('ja')?'ja':'en');
 /* 手順ライン */
 new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}}),{threshold:.5}).observe($('#steps'));
 </script>
