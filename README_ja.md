@@ -7,7 +7,8 @@
 
 # 概要
 
-**[公式サイト](https://chp.clpc.club)をご確認ください。**
+- **[公式サイト](https://chp.clpc.club)をご確認ください。**
+- **[Modrinth](https://modrinth.com/mod/cmd-helper-plus)からModをダウンロードできます。**
 
 # バージョン対応状況
 ✅: 実装済み｜📝: 実装予定
