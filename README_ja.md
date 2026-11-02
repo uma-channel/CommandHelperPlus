@@ -20,7 +20,7 @@
 | Fabric | 26.3 | 📝 |
 
 - 探しているバージョンが見つかりませんでしたか？
-- [Discord](https://dsc.gg/chp)で意見が多ければ対応するかもしれません。
+- [Discord](https://dsc.gg/cmd-helper-plus)で意見が多ければ対応するかもしれません。
 
 # 前提条件
 
