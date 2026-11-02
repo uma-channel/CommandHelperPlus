@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>[CHP] Command Helper Plus | Minecraft MOD</title>
 <meta name="description" content="Command Helper Plus は、Minecraft のコマンド作業を快適にする MOD です。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Command Helper Plus">
+<meta property="og:title" content="[CHP] Command Helper Plus | Minecraft MOD">
+<meta property="og:description" content="Command Helper Plus は、Minecraft のコマンド作業を快適にする MOD です。">
+<meta property="og:image" content="https://raw.githubusercontent.com/uma-channel/CommandHelperPlus/main/logos/chp_logo_2%C3%971.png">
+<meta property="og:locale" content="ja_JP"><meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="[CHP] Command Helper Plus | Minecraft MOD">
+<meta name="twitter:description" content="Command Helper Plus は、Minecraft のコマンド作業を快適にする MOD です。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/uma-channel/CommandHelperPlus/main/logos/chp_logo_2%C3%971.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='30' fill='%233D5AFE'/%3E%3Cpath d='M30 90L52 38' stroke='%23fff' stroke-width='10' stroke-linecap='round'/%3E%3Cpath d='M84 50V78M70 64H98' stroke='%23A5F0FF' stroke-width='10' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
@@ -28,6 +38,7 @@ nav ul a:hover{color:#fff}
 .btn.p::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.4) 50%,transparent 70%);transform:translateX(-120%)}
 .btn.p:hover::after{transform:translateX(120%);transition:.9s}
 .btn:hover{transform:translateY(-3px)}
+.btn.dc{background:#5865F2;box-shadow:0 10px 30px -8px rgba(88,101,242,.7)}
 .btn.g{border:1px solid var(--line);background:rgba(255,255,255,.04)}
 .btn.g:hover{border-color:var(--bl)}
 .blob{position:fixed;border-radius:50%;filter:blur(100px);opacity:.45;z-index:-2;animation:drift 16s ease-in-out infinite alternate;transition:translate .6s}
@@ -224,6 +235,7 @@ footer{max-width:1180px;margin:120px auto 0;padding:34px 5vw 50px;border-top:1px
       <a class="btn p" href="https://modrinth.com/mod/cmd-helper-plus" data-i="bm">Modrinth でダウンロード</a>
       <!-- TODO: GitHub のリポジトリURLに差し替えてください -->
       <a class="btn g" href="https://github.com/uma-channel/CommandHelperPlus" data-i="bg">GitHub でソースコードを見る</a>
+      <a class="btn dc" href="https://dsc.gg/chp" target="_blank" rel="noopener" data-i="bd">Discord に参加</a>
     </div>
     <p class="note" data-i="note">英語と日本語に対応。全バージョン対応は、計画中です。</p>
   </div></div>
@@ -372,7 +384,7 @@ s1h:'Download',s1p:'Get the mod file from Modrinth.',s2h:'Install',s2p:'Put it i
 hg:'A look inside the game.',sg:'Click to enlarge.',
 hd:'Make commands more comfortable.',pd:'Speed up your command work with Command Helper Plus.',
 c5:'Internet connection on first launch',c6:'Mod Menu (optional)',
-bm:'Download on Modrinth',bg:'View source on GitHub',note:'Available in English and Japanese. Support for all versions is planned.',
+bm:'Download on Modrinth',bg:'View source on GitHub',bd:'Join our Discord',note:'Available in English and Japanese. Support for all versions is planned.',
 f2:'This is an unofficial Minecraft mod and is not affiliated with Mojang or Microsoft.',op:'op required'};
 /* 統計(Modrinth / GitHub API) */
 const st={};
