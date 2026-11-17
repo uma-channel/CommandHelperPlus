@@ -1,0 +1,1309 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[CHP] Command Helper Plus | Minecraft MOD</title>
+  <meta name="description" content="Command Helper Plus は、Minecraft のコマンド作業を快適にする MOD です。">
+  <meta name="theme-color" content="#3550e0">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Command Helper Plus">
+  <meta property="og:title" content="[CHP] Command Helper Plus | Minecraft MOD">
+  <meta property="og:description" content="Command Helper Plus は、Minecraft のコマンド作業を快適にする MOD です。">
+  <meta property="og:image" content="https://raw.githubusercontent.com/uma-channel/CommandHelperPlus/main/logos/chp_logo_2%C3%971.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="[CHP] Command Helper Plus | Minecraft MOD">
+  <meta name="twitter:description" content="Command Helper Plus は、Minecraft のコマンド作業を快適にする MOD です。">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/uma-channel/CommandHelperPlus/main/logos/chp_logo_2%C3%971.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='30' fill='%233D5AFE'/%3E%3Cpath d='M30 90L52 38' stroke='%23fff' stroke-width='10' stroke-linecap='round'/%3E%3Cpath d='M84 50V78M70 64H98' stroke='%23A5F0FF' stroke-width='10' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f3f5fa;
+      --bg-tint: #e8eefc;
+      --text: #1c2333;
+      --muted: #596277;
+      --line: #d9deea;
+      --brand: #3550e0;
+      --brand-dark: #2a41b8;
+      --navy: #1f2a44;
+      --discord: #5865f2;
+      --discord-dark: #4752c4;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 72px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font: 400 16px/1.8 "Noto Sans JP", system-ui, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      color: inherit;
+    }
+
+    code {
+      padding: 1px 6px;
+      border-radius: 4px;
+      background: var(--bg-soft);
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: .9em;
+    }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      height: 64px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+    }
+
+    .brand svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 28px;
+      margin-left: auto;
+      font-size: .94rem;
+      color: var(--muted);
+    }
+
+    .menu a:hover {
+      color: var(--brand);
+    }
+
+    .tools {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lang {
+      display: flex;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .lang button {
+      padding: 4px 12px;
+      border: 0;
+      background: none;
+      color: var(--muted);
+      font-size: .82rem;
+      cursor: pointer;
+    }
+
+    .lang button.on {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 26px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--bg);
+      font-weight: 700;
+      line-height: 1.5;
+      cursor: pointer;
+      transition: background-color .2s, border-color .2s;
+    }
+
+    .btn:hover {
+      border-color: var(--brand);
+    }
+
+    .btn.primary {
+      border-color: var(--brand);
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .btn.primary:hover {
+      border-color: var(--brand-dark);
+      background: var(--brand-dark);
+    }
+
+    .btn.discord {
+      border-color: var(--discord);
+      background: var(--discord);
+      color: #fff;
+    }
+
+    .btn.discord:hover {
+      border-color: var(--discord-dark);
+      background: var(--discord-dark);
+    }
+
+    .btn.small {
+      padding: 6px 16px;
+      font-size: .88rem;
+    }
+
+    .hero {
+      padding: 88px 0;
+      background: var(--bg-tint);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4.6vw, 3.2rem);
+      line-height: 1.3;
+    }
+
+    .lead {
+      margin: 24px 0 32px;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .demo {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--bg);
+      overflow: hidden;
+    }
+
+    .demo-bar {
+      display: flex;
+      gap: 6px;
+      padding: 12px 16px;
+      background: var(--bg-soft);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .demo-bar span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--line);
+    }
+
+    .demo-input {
+      min-height: 3.4em;
+      padding: 20px 20px 8px;
+      font: 500 .98rem/1.6 ui-monospace, Menlo, Consolas, monospace;
+      word-break: break-all;
+    }
+
+    .caret {
+      display: inline-block;
+      width: 2px;
+      height: 1.1em;
+      margin-left: 2px;
+      vertical-align: -.2em;
+      background: var(--brand);
+      animation: blink 1s steps(1) infinite;
+    }
+
+    .demo-list {
+      min-height: 168px;
+      padding: 6px 12px 16px;
+      list-style: none;
+      font: 400 .86rem/1.5 ui-monospace, Menlo, Consolas, monospace;
+    }
+
+    .demo-list li {
+      padding: 8px 10px;
+      border-radius: 6px;
+      color: var(--muted);
+      word-break: break-all;
+    }
+
+    .demo-list li.on {
+      background: var(--bg-tint);
+      color: var(--text);
+    }
+
+    .demo-list li.dim {
+      opacity: .35;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section.soft {
+      background: var(--bg-soft);
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      line-height: 1.4;
+    }
+
+    .sub {
+      margin-top: 8px;
+      color: var(--muted);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 4px;
+      margin-top: 36px;
+      border-bottom: 1px solid var(--line);
+      overflow-x: auto;
+    }
+
+    .tab {
+      flex: none;
+      padding: 10px 18px;
+      border: 0;
+      border-bottom: 3px solid transparent;
+      background: none;
+      color: var(--muted);
+      font-weight: 500;
+      cursor: pointer;
+      transition: color .2s, border-color .2s;
+    }
+
+    .tab:hover {
+      color: var(--brand);
+    }
+
+    .tab.on {
+      border-bottom-color: var(--brand);
+      color: var(--brand);
+      font-weight: 700;
+    }
+
+    .panel-body {
+      padding-top: 32px;
+      animation: fade .35s ease;
+    }
+
+    .panel-body h3 {
+      font-size: 1.3rem;
+    }
+
+    .panel-body > p {
+      margin-top: 4px;
+      color: var(--muted);
+    }
+
+    .items {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .items li {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--bg);
+    }
+
+    .items b {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .items span {
+      display: block;
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.7;
+    }
+
+    .items .op {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 0 8px;
+      border-radius: 4px;
+      background: var(--bg-tint);
+      color: var(--brand);
+      font-size: .74rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 36px;
+      padding: 0;
+      list-style: none;
+      counter-reset: step;
+    }
+
+    .steps li {
+      position: relative;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--bg);
+      counter-increment: step;
+    }
+
+    .steps li::before {
+      content: counter(step);
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .steps h3 {
+      font-size: 1.05rem;
+    }
+
+    .steps p {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .req {
+      margin-top: 40px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--bg);
+      overflow: hidden;
+    }
+
+    .req h3 {
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--line);
+      background: var(--bg-soft);
+      font-size: 1rem;
+    }
+
+    .req dl {
+      margin: 0;
+    }
+
+    .req div {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 16px;
+      padding: 12px 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .req div:first-child {
+      border-top: 0;
+    }
+
+    .req dt {
+      color: var(--muted);
+    }
+
+    .req dd {
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 36px;
+    }
+
+    .tile {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--bg);
+      text-align: left;
+      overflow: hidden;
+      cursor: zoom-in;
+      transition: border-color .2s;
+    }
+
+    .tile:hover {
+      border-color: var(--brand);
+    }
+
+    .thumb {
+      position: relative;
+      display: grid;
+      place-items: center;
+      aspect-ratio: 16 / 10;
+      background: var(--bg-soft);
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .thumb img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cap {
+      display: block;
+      padding: 12px 16px 14px;
+    }
+
+    .cap b {
+      display: block;
+    }
+
+    .cap span {
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .cta {
+      padding: 72px 0;
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
+    }
+
+    .cta p {
+      margin-top: 8px;
+      color: #c4cce0;
+    }
+
+    .cta .actions {
+      justify-content: center;
+      margin-top: 28px;
+    }
+
+    .cta .btn:not(.primary):not(.discord) {
+      border-color: #4a5778;
+      background: transparent;
+      color: #fff;
+    }
+
+    .cta .btn:not(.primary):not(.discord):hover {
+      border-color: #fff;
+    }
+
+    .cta .btn.primary {
+      border-color: #fff;
+      background: #fff;
+      color: var(--navy);
+    }
+
+    .cta .btn.primary:hover {
+      background: var(--bg-tint);
+    }
+
+    .cta small {
+      display: block;
+      margin-top: 20px;
+      color: #9aa6c4;
+    }
+
+    footer {
+      padding: 32px 0;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .foot {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px 32px;
+    }
+
+    .foot nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .foot a:hover {
+      color: var(--brand);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 30;
+      display: grid;
+      place-items: center;
+      background: rgba(15, 20, 35, .85);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s, visibility .25s;
+    }
+
+    .lightbox.on {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox figure {
+      width: min(1000px, 90vw);
+      margin: 0;
+    }
+
+    .lightbox img {
+      display: block;
+      width: 100%;
+      max-height: 72vh;
+      border-radius: 8px;
+      object-fit: contain;
+      background: #0f1423;
+    }
+
+    .lightbox figcaption {
+      margin-top: 14px;
+      color: #c4cce0;
+      text-align: center;
+    }
+
+    .lightbox figcaption b {
+      display: block;
+      color: #fff;
+    }
+
+    .lb-btn {
+      position: fixed;
+      width: 44px;
+      height: 44px;
+      border: 1px solid #4a5778;
+      border-radius: 50%;
+      background: transparent;
+      color: #fff;
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .lb-btn:hover {
+      background: rgba(255, 255, 255, .12);
+    }
+
+    .lb-close {
+      top: 20px;
+      right: 20px;
+    }
+
+    .lb-prev {
+      top: 50%;
+      left: 20px;
+    }
+
+    .lb-next {
+      top: 50%;
+      right: 20px;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+    }
+
+    @media (max-width: 860px) {
+      .menu {
+        display: none;
+      }
+
+      .tools {
+        margin-left: auto;
+      }
+
+      .hero {
+        padding: 56px 0;
+      }
+
+      .hero-grid,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .req div {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .tools .btn {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="#top">
+        <svg viewBox="0 0 128 128" aria-hidden="true">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#6B8BFF"/>
+              <stop offset="1" stop-color="#2A3BCF"/>
+            </linearGradient>
+            <linearGradient id="h" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fff" stop-opacity=".22"/>
+              <stop offset=".55" stop-color="#fff" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <rect width="128" height="128" rx="30" fill="url(#g)"/>
+          <rect width="128" height="128" rx="30" fill="url(#h)"/>
+          <rect x="5" y="5" width="118" height="118" rx="25" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="2"/>
+          <g fill="none" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M30 93L52 41M84 53V81M70 67H98" stroke="#1A246E" stroke-opacity=".35"/>
+            <path d="M30 90L52 38" stroke="#fff"/>
+            <path d="M84 50V78M70 64H98" stroke="#A5F0FF"/>
+          </g>
+        </svg>
+        <span>Command Helper Plus</span>
+      </a>
+      <nav class="menu">
+        <a href="#features" data-i="n1">特長</a>
+        <a href="#start" data-i="n2">使い方</a>
+        <a href="#gallery" data-i="n4">ギャラリー</a>
+        <a href="#download" data-i="n3">ダウンロード</a>
+      </nav>
+      <div class="tools">
+        <div class="lang">
+          <button type="button" data-l="ja">日本語</button>
+          <button type="button" data-l="en">English</button>
+        </div>
+        <a class="btn discord small" href="https://dsc.gg/cmd-helper-plus" target="_blank" rel="noopener" data-i="bd">Discord に参加</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <h1 data-i="h1">コマンドを、<br>もっと自由に。</h1>
+          <p class="lead" data-i="lead">Command Helper Plus は、Minecraft のコマンド作業を快適にします。痒い所に手が届く、必須級の便利 MOD です。</p>
+          <div class="actions">
+            <a class="btn primary" href="#download" data-i="b1">ダウンロード</a>
+            <a class="btn" href="#features" data-i="b2">特長を見る</a>
+          </div>
+        </div>
+        <div class="demo" aria-hidden="true">
+          <div class="demo-bar"><span></span><span></span><span></span></div>
+          <div class="demo-input"><span id="typed"></span><i class="caret"></i></div>
+          <ul class="demo-list" id="suggest"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="wrap">
+        <h2 data-i="hf">コマンド作業を、まるごと快適に。</h2>
+        <p class="sub" data-i="sf">コマンドを使うときの面倒を、ひとつずつ軽くします。項目を選ぶと、機能の一覧が開きます。</p>
+        <div class="tabs" id="tabs" role="tablist"></div>
+        <div id="panel"></div>
+      </div>
+    </section>
+
+    <section class="section soft" id="start">
+      <div class="wrap">
+        <h2 data-i="hs">導入は、3ステップ。</h2>
+        <p class="sub" data-i="ss">特別な準備は要りません。</p>
+        <ol class="steps">
+          <li>
+            <h3 data-i="s1h">ダウンロード</h3>
+            <p data-i="s1p">Modrinth から MOD ファイルを入手します。</p>
+          </li>
+          <li>
+            <h3 data-i="s2h">入れる</h3>
+            <p data-i="s2p">Fabric と Fabric API を入れた <code>mods</code> フォルダに置きます。</p>
+          </li>
+          <li>
+            <h3 data-i="s3h">遊ぶ</h3>
+            <p data-i="s3p">ゲームを起動します。</p>
+          </li>
+        </ol>
+        <div class="req">
+          <h3 data-i="rqh">動作環境</h3>
+          <dl id="req"></dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="wrap">
+        <h2 data-i="hg">ゲーム画面を、のぞいてみる。</h2>
+        <p class="sub" data-i="sg">クリックで拡大します。</p>
+        <div class="gallery" id="gallery-grid"></div>
+      </div>
+    </section>
+
+    <section class="cta" id="download">
+      <div class="wrap">
+        <h2 data-i="hd">さあ、コマンドをもっと快適に。</h2>
+        <p data-i="pd">Command Helper Plus で、コマンド作業をスピードアップ。</p>
+        <div class="actions">
+          <a class="btn primary" href="https://modrinth.com/mod/cmd-helper-plus" data-i="bm">Modrinth でダウンロード</a>
+          <a class="btn" href="https://github.com/uma-channel/CommandHelperPlus" data-i="bg">GitHub でソースコードを見る</a>
+          <a class="btn discord" href="https://dsc.gg/cmd-helper-plus" target="_blank" rel="noopener" data-i="bd">Discord に参加</a>
+        </div>
+        <small data-i="note">英語と日本語に対応。全バージョン対応は、計画中です。</small>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <span>© 2026 Command Helper Plus / UMA. All rights reserved.</span>
+      <nav>
+        <a href="https://modrinth.com/mod/cmd-helper-plus">Modrinth</a>
+        <a href="https://github.com/uma-channel/CommandHelperPlus">GitHub</a>
+        <a href="https://dsc.gg/cmd-helper-plus" target="_blank" rel="noopener">Discord</a>
+      </nav>
+      <span data-i="f2">本 MOD は Minecraft の非公式 MOD であり、Mojang および Microsoft とは関係ありません。</span>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-btn lb-close" type="button" aria-label="Close">×</button>
+    <button class="lb-btn lb-prev" type="button" aria-label="Previous">‹</button>
+    <button class="lb-btn lb-next" type="button" aria-label="Next">›</button>
+    <figure>
+      <img alt="">
+      <figcaption><b></b><span></span></figcaption>
+    </figure>
+  </div>
+
+  <script>
+    const $ = (selector, root = document) => root.querySelector(selector);
+    const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+
+    const FEATURES_JA = [
+      {
+        tab: "補完",
+        title: "補完で、快適なコマンド入力を。",
+        desc: "入力を楽にします。構文がわからず、立ち止まることももうありません。",
+        items: [
+          ["SpyglassMC の補完", "チャット欄とコマンドブロック(ブロック・トロッコ)の編集画面で、SpyglassMC の候補をバニラの補完に統合します。"],
+          ["構造記号の候補", "[ { \" ] } , = : を候補に出し、キーの候補には区切りも付けます。"],
+          ["自動閉じ", "括弧と引用符を自動で閉じます。閉じ記号の上書き、Backspace でのペア削除、Tab やクリックで確定した後にも対応します。"],
+          ["候補の型を表示", "候補の右側に [boolean] や [float] のように型を薄く表示します。"],
+          ["{Command:\"…\"} の中", "文字列の中身を1つのコマンドとして補完します。内側の自動閉じ・自動エスケープにも対応します。"],
+          ["権限に応じた候補", "コマンド名の位置では、自分の権限で使えるコマンドだけに絞ります。"],
+          ["バージョンに追従", "遊んでいる Minecraft のバージョンに合わせた候補を出します。任意のバージョンも設定で指定できます。"],
+        ],
+      },
+      {
+        tab: "構文チェック",
+        title: "実行する前に、間違いに気づく。",
+        desc: "入力中のコマンドの誤りを、リアルタイムで文字の下線として示します。",
+        items: [
+          ["下線で誤りを表示", "入力が止まって少しすると、誤りの部分に下線を付けます。エラーは赤、警告は黄色です。"],
+          ["理由をツールチップで", "下線にマウスを重ねると、エラーの文言が出ます。横にスクロールしている長いコマンドでも使えます。"],
+          ["コマンドブロックでも", "チャット欄とコマンドブロックの編集画面の、どちらでも動きます。"],
+          ["{Command:\"…\"} の内側も", "入れ子の文字列の内側の誤りにも、下線が付きます。"],
+          ["存在する ID の確認", "データパックのファンクションなどの ID や、プラグイン/MOD等によるカスタムコマンドは警告がでません。存在しない ID は黄色になります。"],
+        ],
+      },
+      {
+        tab: "履歴・お気に入り",
+        title: "打ったコマンドを、探しやすく、使い回しやすく。",
+        desc: "チャット欄の「履歴」ボタンから、履歴とお気に入りの画面を開けます。",
+        items: [
+          ["履歴ボタン", "チャット欄の入力欄の上に「履歴」ボタンを追加。履歴とお気に入りの2タブの画面が開きます。"],
+          ["検索", "語句で履歴とお気に入りを絞り込みます。空白区切りで AND、大文字小文字は区別しません。"],
+          ["クリックで入力欄へ", "行をクリックするとチャット欄に戻り、入力欄に反映されます。右クリックでコピーします。"],
+          ["保存件数の引き上げ", "バニラは50件までですが、既定で1000件まで保存します。設定で50〜100000件に変えられます。"],
+          ["重複の自動統合", "同じコマンドは1件にまとめ、最後に使った順に並べます。↑↓の履歴にもすぐ反映されます。"],
+          ["お気に入り", "☆で登録・解除。通常履歴の上限や重複統合の対象外で、独立して保存されます。"],
+          ["ショートカットキー", "お気に入りに、Ctrl・Alt・Super を含むキーを割り当てられます。押すと入力欄がそのコマンドに置き換わります(実行はしません)。"],
+          ["削除は必ず確認", "削除の前に確認画面を挟みます。履歴の削除だけは、設定で確認を省けます。"],
+        ],
+      },
+      {
+        tab: "コマンドブロック",
+        title: "長いコマンドも、見渡せる。",
+        desc: "コマンドブロックの編集と確認を、少し楽にします。",
+        items: [
+          ["横スクロール", "コマンドが入力欄に収まらないとき、下にスクロールバーを表示。ドラッグ・クリック・マウスホイールで動かせます。カーソルは動きません。"],
+          ["トロッコにも対応", "コマンドブロックとトロッコ付きコマンドブロックの、両方の編集画面で使えます。"],
+          ["照準で内容を表示", "コマンドブロックに照準を合わせると、中身を右下に表示します。長いコマンドは8行で省略します。設定でオン・オフできます。", true],
+        ],
+      },
+      {
+        tab: "長いコマンド",
+        title: "256文字の壁を、超える。",
+        desc: "複雑なアイテムコンポーネントや summon も、一度に入力できます。",
+        items: [
+          ["制限を引き上げ", "「/」で始まるコマンドだけ、既定で32767文字まで入力・送信できます。設定で256〜32767文字に変えられます。"],
+          ["横スクロール", "上下マウスホイールで左右に動かせます。カーソルは動きません。"],
+          ["通常の発言はそのまま", "「/」のない発言は、バニラどおり256文字です。"],
+          ["署名付きコマンドの安全策", "/say や /msg のように署名付きの引数を持つコマンドは、接続が切れないよう256文字に切り詰めて送ります。"],
+          ["戻しても切れない", "履歴画面から戻したときや、ウィンドウサイズを変えたときも、長い入力が切り詰められません。"],
+        ],
+      },
+      {
+        tab: "ゲーム操作",
+        title: "やり直しの手間を、ボタンひとつに。",
+        desc: "再参加、再起動、データパックの読み直しを速くします。",
+        items: [
+          ["再参加", "ポーズ画面にボタンを追加。シングルは同じワールドへ、マルチは同じサーバーへ入り直します。Realms は対象外です。"],
+          ["再起動", "タイトル画面にボタンを追加。同じ起動構成でゲームを起動し直します。確認画面では、起動コマンドを初期状態で伏せます。"],
+          ["データパックを速く読み直す", "/reload の処理を最適化します。サーバーサイドに導入すればマルチプレイでも機能します。"],
+          ["データパックフォルダを開く", "ポーズ画面のボタンから、ワールドの datapacks フォルダを開きます(シングルプレイ)。"],
+          ["設定ファイルを開く", "設定画面から、設定ファイルと設定フォルダをすぐ開けます。"],
+          ["実験的設定の確認を省く", "ワールドを開く・作るときの、実験的な設定の確認を自動で飛ばします。既定はオフです。"],
+        ],
+      },
+      {
+        tab: "表示",
+        title: "見えないものを、見えるように。",
+        desc: "ワールドの中の情報を、画面に出します。",
+        items: [
+          ["スコアボード HUD", "複数のスコアボードを画面左上に同時に表示します。対象のセレクターを設定でき、架空のプレイヤーも指定できます(最大4つ)。", true],
+          ["透明なエンティティを半透明に", "透明化したエンティティが半透明に見えます。スペクテイターでなくても使え、op は不要です。"],
+          ["marker の表示", "クライアントには届かない marker を、パーティクルの十字で表示します。", true],
+          ["ネームタグの強制表示", "チームの設定や透明化で隠れているネームタグを表示します。透明化は、半透明化がオンのときだけ対象です。"],
+        ],
+      },
+      {
+        tab: "設定",
+        title: "必要なものだけ、オンにする。",
+        desc: "機能ごとに切り替えられます。",
+        items: [
+          ["設定画面", "Mod Menu から開けます。操作設定の「設定を開く」で割り当てたキー(既定は O)からも開けます。"],
+          ["項目が多い", "補完、自動閉じ、構文チェック、文字数制限、履歴の保存件数、HUD など、機能ごとに切り替えられます。"],
+          ["再起動なしで反映", "画面で変えた設定は、そのままゲームに反映されます。"],
+        ],
+      },
+    ];
+
+    const FEATURES_EN = [
+      {
+        tab: "Completion",
+        title: "Comfortable command input, thanks to completion.",
+        desc: "Typing gets easier. No more stopping because you are unsure of the syntax.",
+        items: [
+          ["SpyglassMC completion", "Merges SpyglassMC suggestions into vanilla completion in the chat box and in the command block (block and minecart) editor."],
+          ["Structural symbols", "Suggests [ { \" ] } , = : and adds the separator after key suggestions."],
+          ["Auto-close", "Closes brackets and quotes automatically. Typing a closing symbol overwrites it, Backspace removes the pair, and it also works after confirming with Tab or a click."],
+          ["Type labels", "Shows the type as a dim label on the right of each suggestion, such as [boolean] or [float]."],
+          ["Inside {Command:\"…\"}", "Completes the contents of the string as a single command, with auto-close and auto-escape for the inner layer."],
+          ["Permission-aware", "At the command name position, narrows suggestions to the commands your permission level can use."],
+          ["Follows your version", "Suggests what fits the Minecraft version you are playing. You can also choose any version in the settings."],
+        ],
+      },
+      {
+        tab: "Syntax check",
+        title: "Spot mistakes before you run.",
+        desc: "Underlines errors in the command you are typing, in real time.",
+        items: [
+          ["Underlined errors", "Shortly after you stop typing, the faulty part is underlined. Errors are red and warnings are yellow."],
+          ["Reasons as tooltips", "Hover over an underline to read the message. It works even while a long command is scrolled sideways."],
+          ["In command blocks too", "Works both in the chat box and in the command block editor."],
+          ["Inside {Command:\"…\"}", "Mistakes inside the nested string are underlined as well."],
+          ["Checking existing IDs", "IDs such as data pack functions, and custom commands added by plugins or mods, raise no warnings. IDs that do not exist turn yellow."],
+        ],
+      },
+      {
+        tab: "History & favorites",
+        title: "Find and reuse the commands you typed.",
+        desc: "Open the history and favorites screen from the History button in the chat box.",
+        items: [
+          ["History button", "Adds a History button above the chat input. It opens a screen with two tabs: history and favorites."],
+          ["Search", "Filter history and favorites by keywords. Words are separated by spaces and combined with AND, ignoring case."],
+          ["Click to reuse", "Click a row to go back to the chat with it in the input box. Right-click to copy."],
+          ["Larger history", "Vanilla keeps 50 entries. This mod keeps 1000 by default, adjustable from 50 to 100000 in the settings."],
+          ["Automatic de-duplication", "Identical commands are merged into one and ordered by last use. The Up and Down arrow history updates right away."],
+          ["Favorites", "Star a command to save it, star again to remove it. Favorites are stored separately, outside the history limit and de-duplication."],
+          ["Shortcut keys", "Assign a key combination containing Ctrl, Alt or Super to a favorite. Pressing it replaces the input with that command without running it."],
+          ["Deletion needs confirmation", "A confirmation screen appears before anything is deleted. Only deleting history can skip the confirmation, through a setting."],
+        ],
+      },
+      {
+        tab: "Command blocks",
+        title: "See long commands at a glance.",
+        desc: "Makes editing and checking command blocks a little easier.",
+        items: [
+          ["Horizontal scrolling", "When a command does not fit the input box, a scroll bar appears below it. Drag it, click it or use the mouse wheel. The cursor does not move."],
+          ["Minecarts too", "Works in the editor of both command blocks and command block minecarts."],
+          ["Aim to see contents", "Aim at a command block to see its contents at the lower right. Long commands are cut off after 8 lines. You can switch it in the settings.", true],
+        ],
+      },
+      {
+        tab: "Long commands",
+        title: "Go beyond 256 characters.",
+        desc: "Type complex item components or summon commands in one go.",
+        items: [
+          ["Raised limit", "Only commands starting with / can be typed and sent up to 32767 characters by default. Adjustable from 256 to 32767."],
+          ["Horizontal scrolling", "Scroll sideways with the vertical mouse wheel. The cursor does not move."],
+          ["Normal chat unchanged", "Messages without a leading / stay at the vanilla 256 characters."],
+          ["Safety for signed commands", "Commands with signed arguments, such as /say and /msg, are trimmed to 256 characters when sent so the connection does not drop."],
+          ["Survives going back", "Long input is not trimmed when you return from the history screen or resize the window."],
+        ],
+      },
+      {
+        tab: "Game controls",
+        title: "Redo things with one button.",
+        desc: "Faster rejoining, restarting and data pack reloading.",
+        items: [
+          ["Rejoin", "Adds a button to the pause screen. It re-enters the same world in singleplayer or the same server in multiplayer. Realms is not supported."],
+          ["Restart", "Adds a button to the title screen that relaunches the game with the same launch setup. The confirmation screen hides the launch command at first."],
+          ["Faster data pack reload", "Optimizes the /reload process. When installed on the server side, it also functions in multiplayer."],
+          ["Open the data pack folder", "A pause screen button opens the datapacks folder of the world (singleplayer)."],
+          ["Open the config file", "Open the config file and the config folder right from the settings screen."],
+          ["Skip experimental prompts", "Automatically skips the confirmation about experimental settings when opening or creating a world. Off by default."],
+        ],
+      },
+      {
+        tab: "Display",
+        title: "Make the unseen visible.",
+        desc: "Puts information from inside the world on your screen.",
+        items: [
+          ["Scoreboard HUD", "Shows several scoreboards at once at the top left. Choose the target selector in the settings; fake players can be added too (up to 4).", true],
+          ["Translucent invisible entities", "Invisible entities look translucent. Works without spectator mode and needs no op."],
+          ["Marker display", "Shows markers, which are never sent to the client, as particle crosses.", true],
+          ["Forced name tags", "Shows name tags hidden by team settings or invisibility. For invisibility, it applies only while translucent display is on."],
+        ],
+      },
+      {
+        tab: "Settings",
+        title: "Turn on only what you need.",
+        desc: "Switch features one by one.",
+        items: [
+          ["Settings screen", "Open it from Mod Menu, or with the key assigned to Open Settings in the controls (O by default)."],
+          ["Many options", "Completion, auto-close, syntax check, length limit, history size, HUD and more can each be switched."],
+          ["No restart needed", "Changes made on the screen apply to the game right away."],
+        ],
+      },
+    ];
+
+    const DEMO = [
+      [
+        "/give @s apple[custom_model_data={strings:",
+        [
+          "/give @s apple[custom_model_data={strings:",
+          "/give @s apple[custom_model_data={floats:",
+          "/give @s apple[custom_model_data={flags:",
+        ],
+      ],
+      [
+        "/data modify entity @n[type=!player] Motion",
+        [
+          "/data modify entity @n[type=!player] Motion",
+          "/data modify entity @n[type=!player] Moistness",
+          "/data modify entity @n[type=!player] MoreCarrotTicks",
+        ],
+      ],
+      [
+        "/summon tnt ~ ~ ~ {Tags:",
+        [
+          "/summon tnt ~ ~ ~ {Tags:",
+          "/summon tnt ~ ~ ~ {Team:",
+          "/summon tnt ~ ~ ~ {TicksFrozen:",
+        ],
+      ],
+    ];
+
+    const EN = {
+      title: "[CHP] Command Helper Plus | Minecraft MOD",
+      description: "Command Helper Plus makes working with Minecraft commands easier and more comfortable.",
+      n1: "Features",
+      n2: "Get started",
+      n3: "Download",
+      n4: "Gallery",
+      h1: "Commands,<br>made effortless.",
+      lead: "Command Helper Plus makes Minecraft commands easier and more comfortable. An essential mod that refines every single detail.",
+      b1: "Download",
+      b2: "See features",
+      hf: "Working with commands, made comfortable through and through.",
+      sf: "We take the hassle out of using commands, one piece at a time. Pick a topic to see its features.",
+      hs: "Three steps to get started.",
+      ss: "No special setup needed.",
+      s1h: "Download",
+      s1p: "Get the mod file from Modrinth.",
+      s2h: "Install",
+      s2p: "Put it in the <code>mods</code> folder of an install with Fabric and Fabric API.",
+      s3h: "Play",
+      s3p: "Launch the game.",
+      rqh: "Requirements",
+      hg: "A look inside the game.",
+      sg: "Click to enlarge.",
+      hd: "Make commands more comfortable.",
+      pd: "Speed up your command work with Command Helper Plus.",
+      bm: "Download on Modrinth",
+      bg: "View source on GitHub",
+      bd: "Join our Discord",
+      note: "Available in English and Japanese. Support for all versions is planned.",
+      f2: "This is an unofficial Minecraft mod and is not affiliated with Mojang or Microsoft.",
+      op: "op required",
+      ph: "Screenshot coming soon",
+    };
+
+    const REQUIREMENTS = [
+      { ja: ["Minecraft", "Java Edition"], en: ["Minecraft", "Java Edition"] },
+      { ja: ["MOD ローダー", "Fabric"], en: ["Mod loader", "Fabric"] },
+      { ja: ["必須", "Fabric API"], en: ["Required", "Fabric API"] },
+      { ja: ["任意", "Mod Menu"], en: ["Optional", "Mod Menu"] },
+      { ja: ["通信", "初回のみ、インターネット接続が必要です"], en: ["Network", "An internet connection is needed on first launch"] },
+    ];
+
+    const GALLERY = [
+      { file: "01-completion", ja: ["補完", "打ちながら、候補がその場に出ます。"], en: ["Completion", "Suggestions appear as you type."] },
+      { file: "02-syntax", ja: ["構文チェック", "誤りは下線で、その場でわかります。"], en: ["Syntax check", "Mistakes are underlined on the spot."] },
+      { file: "03-history", ja: ["履歴・お気に入り", "過去のコマンドを、検索して呼び出せます。"], en: ["History & favorites", "Search and recall past commands."] },
+      { file: "04-commandblock", ja: ["コマンドブロック", "長いコマンドも、横スクロールで見渡せます。"], en: ["Command blocks", "Scroll sideways through long commands."] },
+      { file: "05-hud", ja: ["スコアボード HUD", "複数のスコアボードを、同時に表示します。"], en: ["Scoreboard HUD", "Show several scoreboards at once."] },
+      { file: "06-settings", ja: ["設定", "必要な機能だけを、オンにできます。"], en: ["Settings", "Turn on only the features you need."] },
+    ];
+
+    const JA = {};
+    $$("[data-i]").forEach((el) => {
+      JA[el.dataset.i] = el.innerHTML;
+    });
+    JA.title = document.title;
+    JA.description = $("meta[name=description]").content;
+    JA.op = "op 必要";
+    JA.ph = "画像準備中";
+
+    const tabs = $("#tabs");
+    const panel = $("#panel");
+    const req = $("#req");
+    const grid = $("#gallery-grid");
+    const lightbox = $("#lightbox");
+    const lightboxImage = $("img", lightbox);
+
+    let lang = "ja";
+    let currentTab = 0;
+    let currentSlide = 0;
+
+    const dict = () => (lang === "ja" ? JA : EN);
+    const features = () => (lang === "ja" ? FEATURES_JA : FEATURES_EN);
+
+    function renderTabs() {
+      tabs.innerHTML = features()
+        .map((f, n) => `<button class="tab${n === currentTab ? " on" : ""}" type="button" role="tab" data-n="${n}">${f.tab}</button>`)
+        .join("");
+    }
+
+    function renderPanel() {
+      const f = features()[currentTab];
+      const items = f.items
+        .map(([name, text, op]) => `<li><b>${name}${op ? `<em class="op">${dict().op}</em>` : ""}</b><span>${text}</span></li>`)
+        .join("");
+      panel.innerHTML = `<div class="panel-body"><h3>${f.title}</h3><p>${f.desc}</p><ul class="items">${items}</ul></div>`;
+    }
+
+    function renderRequirements() {
+      req.innerHTML = REQUIREMENTS
+        .map((r) => `<div><dt>${r[lang][0]}</dt><dd>${r[lang][1]}</dd></div>`)
+        .join("");
+    }
+
+    function renderGallery() {
+      grid.innerHTML = GALLERY
+        .map((g, n) => {
+          const [title, text] = g[lang];
+          return `<button class="tile" type="button" data-n="${n}">
+            <span class="thumb"><span>${dict().ph}</span><img src="images/${g.file}.png" alt="${title}" loading="lazy" onerror="this.remove()"></span>
+            <span class="cap"><b>${title}</b><span>${text}</span></span>
+          </button>`;
+        })
+        .join("");
+    }
+
+    function setLang(next) {
+      lang = next;
+      const d = dict();
+      $$("[data-i]").forEach((el) => {
+        el.innerHTML = d[el.dataset.i];
+      });
+      document.title = d.title;
+      $("meta[name=description]").content = d.description;
+      document.documentElement.lang = lang;
+      $$(".lang button").forEach((b) => b.classList.toggle("on", b.dataset.l === lang));
+      renderTabs();
+      renderPanel();
+      renderRequirements();
+      renderGallery();
+      try {
+        localStorage.setItem("chp-lang", lang);
+      } catch (e) {}
+    }
+
+    tabs.addEventListener("click", (e) => {
+      const button = e.target.closest(".tab");
+      if (!button) return;
+      currentTab = Number(button.dataset.n);
+      renderTabs();
+      renderPanel();
+    });
+
+    $(".lang").addEventListener("click", (e) => {
+      const button = e.target.closest("button");
+      if (button) setLang(button.dataset.l);
+    });
+
+    function openLightbox(n) {
+      currentSlide = (n + GALLERY.length) % GALLERY.length;
+      const [title, text] = GALLERY[currentSlide][lang];
+      lightboxImage.style.display = "";
+      lightboxImage.onerror = () => {
+        lightboxImage.style.display = "none";
+      };
+      lightboxImage.src = `images/${GALLERY[currentSlide].file}.png`;
+      lightboxImage.alt = title;
+      $("figcaption b", lightbox).textContent = title;
+      $("figcaption span", lightbox).textContent = text;
+      lightbox.classList.add("on");
+    }
+
+    const closeLightbox = () => lightbox.classList.remove("on");
+
+    grid.addEventListener("click", (e) => {
+      const tile = e.target.closest(".tile");
+      if (tile) openLightbox(Number(tile.dataset.n));
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target.closest(".lb-close") || e.target === lightbox) closeLightbox();
+      else if (e.target.closest(".lb-prev")) openLightbox(currentSlide - 1);
+      else if (e.target.closest(".lb-next")) openLightbox(currentSlide + 1);
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (!lightbox.classList.contains("on")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") openLightbox(currentSlide - 1);
+      if (e.key === "ArrowRight") openLightbox(currentSlide + 1);
+    });
+
+    const typed = $("#typed");
+    const suggest = $("#suggest");
+    const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+    async function runDemo() {
+      let index = 0;
+      for (;;) {
+        const [text, candidates] = DEMO[index++ % DEMO.length];
+        suggest.innerHTML = "";
+        for (let k = 1; k <= text.length; k++) {
+          const current = text.slice(0, k);
+          typed.textContent = current;
+          if (k === 3) {
+            suggest.innerHTML = candidates
+              .map((c, n) => `<li${n === 0 ? ' class="on"' : ""}>${c}</li>`)
+              .join("");
+          }
+          if (k > 3) {
+            $$("li", suggest).forEach((li, n) => li.classList.toggle("dim", !candidates[n].startsWith(current)));
+          }
+          await sleep(65 + Math.random() * 55);
+        }
+        await sleep(2000);
+        while (typed.textContent) {
+          typed.textContent = typed.textContent.slice(0, -1);
+          await sleep(16);
+        }
+        suggest.innerHTML = "";
+        await sleep(450);
+      }
+    }
+
+    let saved = null;
+    try {
+      saved = localStorage.getItem("chp-lang");
+    } catch (e) {}
+    const query = new URLSearchParams(location.search).get("lang");
+    const browser = ((navigator.languages && navigator.languages[0]) || navigator.language || "").toLowerCase();
+    const supported = ["ja", "en"];
+    setLang(
+      supported.includes(query) ? query
+        : supported.includes(saved) ? saved
+        : browser.startsWith("ja") ? "ja" : "en"
+    );
+    runDemo();
+  </script>
+</body>
+</html>
