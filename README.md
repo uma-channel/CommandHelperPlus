@@ -108,7 +108,7 @@ Click on any category below to expand and view its detailed features.
 | Loader | Version | Status |
 |---|---|---|
 | Fabric | 1.21.10 | ✅ |
-| Fabric | 1.21.11 | 📝 |
+| Fabric | 1.21.11 | ✅ |
 | Fabric | 26.3 | ✅ |
 | Fabric | Latest Release | 📝 |
 
