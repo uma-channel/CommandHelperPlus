@@ -99,5 +99,19 @@
   "gui.commandhelperplus.restart.source": "取得元: %s",
   "gui.commandhelperplus.restart.hidden": "起動コマンドは伏せています(下のボタンで表示できます)",
   "gui.commandhelperplus.restart.btn.reveal": "起動コマンドを表示(ファイルパスが映ります)",
-  "gui.commandhelperplus.restart.btn.hide": "起動コマンドを隠す"
+  "gui.commandhelperplus.restart.btn.hide": "起動コマンドを隠す",
+
+  "gui.commandhelperplus.spyglass_consent.title": "SpyglassMC 補完パッケージのダウンロード確認",
+  "gui.commandhelperplus.spyglass_consent.purpose_label": "【ダウンロードの目的】",
+  "gui.commandhelperplus.spyglass_consent.purpose_value": "SpyglassMC による高精度なコマンド補完・構文チェック機能の提供",
+  "gui.commandhelperplus.spyglass_consent.source_label": "【ダウンロード元】",
+  "gui.commandhelperplus.spyglass_consent.source_value": "npm 公式レジストリ (https://registry.npmjs.org/)",
+  "gui.commandhelperplus.spyglass_consent.dest_label": "【ダウンロード先】",
+  "gui.commandhelperplus.spyglass_consent.dest_hidden": "ダウンロード先: 非表示 (クリックして表示)",
+  "gui.commandhelperplus.spyglass_consent.path.show": "ダウンロード先パスを表示 (クリック)",
+  "gui.commandhelperplus.spyglass_consent.path.hide": "ダウンロード先パスを隠す",
+  "gui.commandhelperplus.spyglass_consent.delay_note": "※ 初回適用時(パッケージのダウンロードとセットアップ完了まで)は少し遅延・時間がかかることがあります。",
+  "gui.commandhelperplus.spyglass_consent.note": "※ 同意しない場合、Spyglass補完はオフになります(バニラの補完は通常通り動作します)。",
+  "gui.commandhelperplus.spyglass_consent.btn.agree": "同意する",
+  "gui.commandhelperplus.spyglass_consent.btn.deny": "同意しない"
 }
