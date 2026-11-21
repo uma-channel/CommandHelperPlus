@@ -99,5 +99,19 @@
   "gui.commandhelperplus.restart.source": "Source: %s",
   "gui.commandhelperplus.restart.hidden": "Launch command is masked (Use button below to reveal)",
   "gui.commandhelperplus.restart.btn.reveal": "Show launch command (Path will be visible)",
-  "gui.commandhelperplus.restart.btn.hide": "Hide launch command"
+  "gui.commandhelperplus.restart.btn.hide": "Hide launch command",
+
+  "gui.commandhelperplus.spyglass_consent.title": "SpyglassMC Download Confirmation",
+  "gui.commandhelperplus.spyglass_consent.purpose_label": "[ Purpose ]",
+  "gui.commandhelperplus.spyglass_consent.purpose_value": "Provide advanced command suggestions & syntax checking via SpyglassMC",
+  "gui.commandhelperplus.spyglass_consent.source_label": "[ Download Source ]",
+  "gui.commandhelperplus.spyglass_consent.source_value": "Official npm Registry (https://registry.npmjs.org/)",
+  "gui.commandhelperplus.spyglass_consent.dest_label": "[ Download Destination ]",
+  "gui.commandhelperplus.spyglass_consent.dest_hidden": "Destination: Hidden (Click to reveal)",
+  "gui.commandhelperplus.spyglass_consent.path.show": "Reveal Destination Path (Click)",
+  "gui.commandhelperplus.spyglass_consent.path.hide": "Hide Destination Path",
+  "gui.commandhelperplus.spyglass_consent.delay_note": "* Initial application may take a moment while downloading and setting up.",
+  "gui.commandhelperplus.spyglass_consent.note": "* If you do not agree, Spyglass suggestions will be turned off (vanilla suggestions work normally).",
+  "gui.commandhelperplus.spyglass_consent.btn.agree": "Agree",
+  "gui.commandhelperplus.spyglass_consent.btn.deny": "Do Not Agree"
 }
