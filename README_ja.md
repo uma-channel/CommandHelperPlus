@@ -121,31 +121,7 @@
 - **Modローダー**: Fabric
 - **前提Mod**: [Fabric API](https://modrinth.com/mod/fabric-api/versions?c=release)
 - **推奨Mod**: [ModMenu](https://modrinth.com/mod/modmenu/versions?c=release&l=fabric)
-- **動作環境**: クライアントサイドのみ、サーバーサイドのみ、またはその両方 
-
-# ビルド方法
-
-### MOD をビルド
-```
-./gradlew build
-```
-
-### 開発用クライアントを起動
-```
-./gradlew runClient
-```
-
-### 開発用サーバーを起動
-```
-./gradlew runServer
-```
-
-# Node.js ブリッジのセットアップ
-
-```bash
-cd node-bridge
-npm install
-```
+- **動作環境**: クライアントサイドのみ、サーバーサイドのみ、またはその両方
 
 # Super Thanks
 [Copyright (c) 2019-2025 SPGoding and SpyglassMC contributors](https://spyglassmc.com)
