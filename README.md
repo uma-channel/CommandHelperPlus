@@ -123,30 +123,6 @@ If there is enough feedback on [Discord](https://dsc.gg/cmd-helper-plus), we mig
 - **Recommended Mod**: [ModMenu](https://modrinth.com/mod/modmenu/versions?c=release&l=fabric)
 - **Environments**: Client-side only, Server-side only, or both
 
-# Build
-
-### Build the MOD
-```
-./gradlew build
-```
-
-### Launch Development Client
-```
-./gradlew runClient
-```
-
-### Launch Development Server
-```
-./gradlew runServer
-```
-
-# Node.js Bridge Setup
-
-```bash
-cd node-bridge
-npm install
-```
-
 # Super Thanks
 [Copyright (c) 2019-2025 SPGoding and SpyglassMC contributors](https://spyglassmc.com)
 
